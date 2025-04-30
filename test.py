@@ -66,7 +66,7 @@ def cif_template() -> Dict:
     """Deep‑copyable template JSON with every scalar value set to *None* (or empty)."""
     return {
         "personal_details": {
-            "client_1": {
+            "client": {
                 "title": None,
                 "first_name": None,
                 "middle_names": None,
@@ -99,7 +99,7 @@ def cif_template() -> Dict:
             "dependants_children": [],
         },
         "employment": {
-            "client_1": {
+            "client": {
                 "country_domiciled": None,
                 "resident_for_tax": None,
                 "national_insurance_number": None,
@@ -127,7 +127,7 @@ def cif_template() -> Dict:
         "other_assets": [],
         "loans_mortgages": [],
         "health_details": {
-            "client_1": {
+            "client": {
                 "current_state_of_health": None,
                 "state_of_health_explanation": None,
                 "smoker": None,
@@ -187,6 +187,35 @@ def build_prompt(last_lines: str, section_path: str, subkeys: List[str]) -> str:
         if it feels unusual:
         {bullets}
 
+        IMPORTANT: Always clearly indicate who is speaking by prefixing each turn with "Adviser:" or "Client:" 
+        labels. This diarization is critical for proper transcription formatting.
+
+        IMPORTANT: When extracting data for the structured_data JSON, standardize the values to be concise and consistent.
+        Follow these standardization guidelines:
+        
+        1. For boolean or yes/no fields:
+           - Use only "yes", "no", or null values
+           - Example: Convert "I haven't set up a will yet" to "no"
+           - Example: Convert "Yes, I do have one" to "yes"
+        
+        2. For status fields (health, conditions, etc.):
+           - Use standardized terms: "excellent", "good", "fair", "poor", or more specific medical terms when appropriate
+           - Example: Convert "Pretty good overall, usual wear and tear" to "good"
+           
+        3. For explanatory fields:
+           - Keep them brief but informative, 10-15 words maximum
+           - When something doesn't exist, use null rather than explanations like "Hasn't been set up yet"
+           
+        4. For numerical fields:
+           - Use plain values without units or explanatory text
+           - Example: Convert "About 10 cigarettes per day" to "10"
+           
+        5. For date fields:
+           - Use ISO format (YYYY-MM-DD) where possible, or consistent formats like "January 2020"
+        
+        6. When information is absent or unknown:
+           - Use null values instead of phrases like "not provided" or "unknown"
+
         After the dialogue, return a JSON object *only* with the shape:
         {{
           "conversation_chunk": "<the dialogue you wrote>",
@@ -202,6 +231,88 @@ def build_prompt(last_lines: str, section_path: str, subkeys: List[str]) -> str:
         it parses with `json.loads`.
         """
     )
+
+
+def build_digression_prompt(last_lines: str, partial_json: Dict, already_explained: set) -> str:
+    """Create a prompt for adviser to explain topics already collected but not yet explained."""
+    logger.debug("Building digression prompt")
+    
+    # Serialize the partial JSON for the model to see what's already known
+    json_dump = json.dumps(partial_json, indent=2)
+    
+    # Identify all filled scalar fields that haven't been explained yet
+    def collect_fields(obj, prefix=""):
+        """Recursively collect all non-empty scalar fields with their dotted paths."""
+        fields = []
+        if isinstance(obj, dict):
+            for k, v in obj.items():
+                path = f"{prefix}.{k}" if prefix else k
+                if isinstance(v, dict):
+                    fields.extend(collect_fields(v, path))
+                elif isinstance(v, list) and v and all(isinstance(item, dict) for item in v):
+                    # Skip array fields for simplicity
+                    pass
+                elif v not in (None, [], {}):  # Field has a value
+                    fields.append(path)
+        return fields
+    
+    filled_fields = set(collect_fields(partial_json))
+    new_fields = filled_fields - already_explained
+    logger.debug(f"Fields to explain: {new_fields}")
+    
+    if not new_fields:
+        logger.warning("No new fields to explain in digression")
+        # Return a minimal set to explain if nothing new
+        new_fields = set(random.sample(list(filled_fields), min(3, len(filled_fields))))
+    
+    # Take 3-5 fields to explain (or fewer if less available)
+    fields_to_explain = random.sample(list(new_fields), min(random.randint(3, 5), len(new_fields)))
+    bullets = "\n".join(f"- {k}" for k in fields_to_explain)
+    
+    return textwrap.dedent(
+        f"""
+        Continue naturally from the last lines below (do *not* repeat them verbatim):
+        ---
+        {last_lines or '<start of call>'}
+        ---
+        
+        You are a professional financial adviser conducting a fact-finding assessment with a client. 
+        This is an important initial consultation where you need to build trust while demonstrating expertise.
+        
+        Do not ask any new personal questions in this turn.
+        
+        You (the adviser) now take a short pause to explain some financial concepts based on what you've learned.
+        
+        IMPORTANT: Always clearly indicate who is speaking by prefixing each turn with "Adviser:" or "Client:" 
+        labels. This diarization is essential even in explanatory sections where the adviser speaks more.
+        
+        Here is what you already know in machine form:
+        {json_dump}
+        
+        Explain, in friendly but thorough layman terms, the following points (in order):
+        {bullets}
+        
+        Be somewhat verbose and detailed in your explanations. Use relatable examples and metaphors where appropriate.
+        Draw connections between the client's specific situation and these financial concepts.
+        
+        Your explanation should:
+        - Be conversational and include brief client acknowledgements
+        - Take about 20-30 seconds of speaking time (approximately 150-200 words)
+        - Use plain English while still introducing a few key financial terms (with explanations)
+        - Show genuine expertise while remaining accessible to non-financial professionals
+        - Occasionally reference how these concepts might affect the client's long-term financial planning
+        - Always clearly label each speaker turn with "Adviser:" or "Client:" prefixes
+        
+        Return only JSON with the shape:
+        {{
+          "conversation_chunk": "<your thorough explanation plus brief client acknowledgements>"
+        }}
+        
+        Do not wrap the JSON in markdown fences; do not add comments; make sure
+        it parses with `json.loads`.
+        """
+    )
+
 
 # -----------------------------------------------------------------------------
 # 3.  Helper: walk & merge ------------------------------------------------------
@@ -251,10 +362,10 @@ def run_driver_loop(model: str = "gpt-4o-mini", *, temperature: float = 0.8, see
 
     # Ordered deque of section paths we want to cover (edit / extend as needed)
     sections = collections.deque([
-        "personal_details.client_1",
+        "personal_details.client",
         "personal_details.current_address",
-        "employment.client_1",
-        "health_details.client_1",
+        "employment.client",
+        "health_details.client",
     ])
     logger.info(f"Initial sections queue: {list(sections)}")
     
@@ -266,6 +377,12 @@ def run_driver_loop(model: str = "gpt-4o-mini", *, temperature: float = 0.8, see
 
     transcript_chunks: List[str] = []
     last_lines = ""
+    
+    # Track explained fields to avoid repetition
+    explained_fields = set()
+    
+    # Counter to trigger digressions
+    turns_since_last_digression = 0
 
     openai_client = openai.Client()
 
@@ -274,6 +391,48 @@ def run_driver_loop(model: str = "gpt-4o-mini", *, temperature: float = 0.8, see
         turn += 1
         section_path = sections.popleft()
         logger.info(f"Turn {turn}: Processing section {section_path}")
+        
+        # Check if this is a digression turn
+        if section_path == "__DIGRESSION__":
+            logger.info("Processing digression turn")
+            try:
+                prompt = build_digression_prompt(last_lines, master_json, explained_fields)
+                
+                logger.debug(f"Calling OpenAI API for digression with model {model}")
+                response = openai_client.chat.completions.create(
+                    model=model,
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=temperature,
+                    response_format={"type": "json_object"}
+                )
+                
+                content = response.choices[0].message.content.strip()
+                payload = json.loads(content)
+                
+                chunk = payload.get("conversation_chunk", "").strip()
+                
+                # Accumulate dialogue
+                transcript_chunks.append(chunk)
+                last_lines = "\n".join(chunk.splitlines()[-3:])  # last 3 lines
+                
+                # Extract fields that were just explained from the prompt
+                # This is a simplification; in practice, you might want to parse the prompt
+                # to extract the exact field names that were requested to be explained
+                for line in prompt.splitlines():
+                    if line.strip().startswith("- "):
+                        field = line.strip()[2:].strip()
+                        explained_fields.add(field)
+                
+                # Reset digression counter
+                turns_since_last_digression = 0
+                logger.info("Digression turn completed")
+                continue
+                
+            except Exception as exc:
+                logger.error(f"Digression turn failed: {exc}")
+                # If digression fails, just continue with normal flow
+                turns_since_last_digression += 1
+                continue
         
         # find the list of subkeys still missing (or return early if none)
         subdict = _get_subdict(master_json, section_path)
@@ -314,20 +473,23 @@ def run_driver_loop(model: str = "gpt-4o-mini", *, temperature: float = 0.8, see
             raise ValueError(f"Model returned invalid JSON on turn {turn}:\n{content}") from exc
 
         chunk = payload.get("conversation_chunk", "").strip()
-        data = payload.get("structured_data", {}).get(section_path, {})
-        logger.debug(f"Extracted data for section {section_path}: {data}")
+        
+        # Extract structured data only for non-digression turns
+        if section_path != "__DIGRESSION__":
+            data = payload.get("structured_data", {}).get(section_path, {})
+            logger.debug(f"Extracted data for section {section_path}: {data}")
 
-        if not isinstance(data, dict):
-            logger.error(f"Expected dict for section {section_path}, got: {data}")
-            raise ValueError(f"Expected dict for section {section_path}, got: {data}")
+            if not isinstance(data, dict):
+                logger.error(f"Expected dict for section {section_path}, got: {data}")
+                raise ValueError(f"Expected dict for section {section_path}, got: {data}")
+                
+            # Merge extracted values
+            merge_into(master_json, section_path, data)
+            logger.debug(f"Updated values for {section_path}")
 
         # 1) accumulate dialogue
         transcript_chunks.append(chunk)
         last_lines = "\n".join(chunk.splitlines()[-3:])  # last 3 lines
-
-        # 2) merge extracted values
-        merge_into(master_json, section_path, data)
-        logger.debug(f"Updated values for {section_path}")
 
         # 3) Re‑append section if still incomplete
         section_after_update = _get_subdict(master_json, section_path)
@@ -335,6 +497,29 @@ def run_driver_loop(model: str = "gpt-4o-mini", *, temperature: float = 0.8, see
         if incomplete:
             logger.info(f"Section {section_path} still has incomplete fields: {incomplete}")
             sections.append(section_path)
+            
+        # Increment counter for regular turns
+        turns_since_last_digression += 1
+        
+        # Schedule a digression after every 2 regular turns if we have new data
+        if turns_since_last_digression >= 2:
+            # Check if we have fields that have not been explained yet
+            def collect_filled_fields(obj, prefix=""):
+                """Collect all filled scalar fields with their dotted paths."""
+                fields = []
+                if isinstance(obj, dict):
+                    for k, v in obj.items():
+                        path = f"{prefix}.{k}" if prefix else k
+                        if isinstance(v, dict):
+                            fields.extend(collect_filled_fields(v, path))
+                        elif v not in (None, [], {}):  # Field has a value
+                            fields.append(path)
+                return fields
+            
+            filled_fields = set(collect_filled_fields(master_json))
+            if filled_fields - explained_fields:
+                logger.info("Scheduling digression turn")
+                sections.appendleft("__DIGRESSION__")
 
     logger.info(f"Driver loop completed after {turn} turns")
     return "\n\n".join(transcript_chunks), master_json
@@ -368,7 +553,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--model", default="gpt-4o-mini", help="OpenAI chat model")
     parser.add_argument("--temperature", type=float, default=0.8, help="sampling temperature")
     parser.add_argument("--seed", type=int, default=None, help="random seed for reproducibility")
-    parser.add_argument("--num-cases", type=int, default=10, help="number of synthetic cases to generate")
+    parser.add_argument("--num-cases", type=int, default=1, help="number of synthetic cases to generate")
     parser.add_argument("--log-file", type=str, default=None, help="file to save logs to")
     return parser.parse_args()
 

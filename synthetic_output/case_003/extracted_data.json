@@ -1,0 +1,169 @@
+{
+  "personal_details": {
+    "client": {
+      "title": null,
+      "first_name": "Emily",
+      "middle_names": "Sofia",
+      "last_name": "Thompson",
+      "known_as": "Sophie",
+      "pronouns": "she/her",
+      "date_of_birth": "1985-03-15",
+      "place_of_birth": "Sydney, Australia",
+      "nationality": "Australian and British",
+      "gender": "female",
+      "legal_sex": "female",
+      "marital_status": "divorced",
+      "home_phone": null,
+      "mobile_phone": "0412 345 678",
+      "email_address": "sophie.thompson@email.com"
+    },
+    "current_address": {
+      "ownership_status": "renting",
+      "postcode": "12345",
+      "house_name_or_number": "24",
+      "street_name": "Maple Street",
+      "address_line3": null,
+      "address_line4": null,
+      "town_city": "Springfield",
+      "county": "Greene",
+      "country": null,
+      "move_in_date": "2022-10",
+      "previous_addresses": [
+        {
+          "postcode": null,
+          "house_name_or_number": null,
+          "street_name": null,
+          "address_line3": null,
+          "address_line4": null,
+          "town_city": "Rivertown",
+          "county": null,
+          "country": null,
+          "move_out_date": "2022-10"
+        }
+      ]
+    },
+    "dependants_children": []
+  },
+  "employment": {
+    "client": {
+      "country_domiciled": "Australia",
+      "resident_for_tax": "Australia",
+      "national_insurance_number": "123-456-789",
+      "employment_status": "employed",
+      "desired_retirement_age": 60,
+      "occupation": "marketing manager",
+      "employer": "tech company",
+      "employment_started": "2018-01",
+      "highest_rate_of_tax_paid": 37,
+      "notes": null
+    }
+  },
+  "incomes": {
+    "owner": "Sophie",
+    "name": "Marketing Manager Salary",
+    "amount": 75000,
+    "frequency": "annual",
+    "net_gross": "gross",
+    "timeframe": null
+  },
+  "expenses": {
+    "loan_repayments": {
+      "owner": "Sophie",
+      "name": "Student Loan",
+      "amount": 200,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": null
+    },
+    "housing_expenses": {
+      "owner": "Sophie and Partner",
+      "name": "Rent",
+      "amount": 1500,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": null
+    },
+    "motoring_expenses": {
+      "owner": "Sophie",
+      "name": "Fuel and Maintenance",
+      "amount": 800,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": null
+    },
+    "personal_expenses": {
+      "owner": "Sophie",
+      "name": "Groceries and Utilities",
+      "amount": 400,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": null
+    },
+    "professional_expenses": {
+      "owner": "Sophie",
+      "name": "Continuing Education and Memberships",
+      "amount": 2500,
+      "frequency": "annual",
+      "priority": "high",
+      "timeframe": null
+    },
+    "miscellaneous_expenses": {
+      "owner": "Sophie",
+      "name": "Gym and Streaming Services",
+      "amount": 120,
+      "frequency": "monthly",
+      "priority": "moderate",
+      "timeframe": null
+    },
+    "notes": null
+  },
+  "pensions": {
+    "owner": "Sophie",
+    "type": "401(k)",
+    "provider": "Wells Fargo",
+    "value": 25000,
+    "policy_number": "987654321"
+  },
+  "savings_investments": {
+    "owner": "Sophie",
+    "type": "High-Yield Savings",
+    "provider": "Commonwealth Bank",
+    "value": 20000
+  },
+  "other_assets": [],
+  "loans_mortgages": {
+    "owner": "Sophie",
+    "type": "fixed-rate mortgage",
+    "provider": "Big Bank Corp",
+    "monthly_cost": 1200,
+    "outstanding_value": 150000,
+    "interest_rate": 3.5,
+    "special_rate": null,
+    "final_payment": "2038-10"
+  },
+  "health_details": {
+    "client": {
+      "current_state_of_health": "fair",
+      "state_of_health_explanation": "Effects of smoking managed by exercise and diet.",
+      "smoker": "yes",
+      "cigarettes_per_day": 10,
+      "smoker_since": 2011,
+      "long_term_care_needed": null,
+      "long_term_care_explanation": "Hasn't considered yet.",
+      "will": "yes",
+      "information_about_will": "Arrangements made for family, needs review.",
+      "power_of_attorney": "no",
+      "attorney_details": null
+    }
+  },
+  "protection_policies": {
+    "owner": "Sophie",
+    "type": "Term Life Insurance",
+    "provider": "Life Insurance Co, Secure Future",
+    "monthly_cost": 400,
+    "amount_assured": 750000,
+    "in_trust": "yes",
+    "assured": "children"
+  },
+  "objectives": "Saving for a house, maximizing savings and budget planning."
+}

@@ -1,0 +1,175 @@
+{
+  "personal_details": {
+    "client": {
+      "title": "Ms.",
+      "first_name": "Sarah",
+      "middle_names": "James",
+      "last_name": "Mitchell",
+      "known_as": "Sarah",
+      "pronouns": "she/her",
+      "date_of_birth": "1985-03-14",
+      "place_of_birth": "San Diego, California",
+      "nationality": "American",
+      "gender": "female",
+      "legal_sex": null,
+      "marital_status": "married",
+      "home_phone": "555-1234",
+      "mobile_phone": "555-123-4567",
+      "email_address": "sarah.mitchell@email.com"
+    },
+    "current_address": {
+      "ownership_status": "own",
+      "postcode": "M20 2AB",
+      "house_name_or_number": "42",
+      "street_name": "Maple Lane",
+      "address_line3": null,
+      "address_line4": null,
+      "town_city": "Manchester",
+      "county": "Greater Manchester",
+      "country": "UK",
+      "move_in_date": "2020-06",
+      "previous_addresses": [
+        {
+          "house_name_or_number": null,
+          "street_name": null,
+          "address_line3": "City Center",
+          "address_line4": null,
+          "town_city": null,
+          "county": null,
+          "country": null,
+          "move_in_date": null
+        }
+      ]
+    },
+    "dependants_children": [
+      {
+        "age": 8
+      },
+      {
+        "age": 5
+      }
+    ]
+  },
+  "employment": {
+    "client": {
+      "country_domiciled": "UK",
+      "resident_for_tax": "2015-01",
+      "national_insurance_number": "AB123456C",
+      "employment_status": "part-time",
+      "desired_retirement_age": 60,
+      "occupation": "project manager",
+      "employer": "Innovatech Solutions",
+      "employment_started": "2018-01",
+      "highest_rate_of_tax_paid": 40,
+      "notes": "Stable job with job security concerns."
+    }
+  },
+  "incomes": {
+    "owner": "Sarah",
+    "name": "Bookstore and Freelance Graphic Design",
+    "amount": 2400,
+    "frequency": "monthly",
+    "net_gross": "gross",
+    "timeframe": null
+  },
+  "expenses": {
+    "loan_repayments": {
+      "owner": "Sarah",
+      "name": "Student Loan",
+      "amount": 200,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "4 years"
+    },
+    "housing_expenses": {
+      "owner": "Sarah",
+      "name": "Rent",
+      "amount": 1200,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "indefinite"
+    },
+    "motoring_expenses": {
+      "owner": "Sarah",
+      "name": "Car Payments",
+      "amount": 700,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "2 years"
+    },
+    "personal_expenses": {
+      "owner": "Sarah",
+      "name": "Dining and Gym",
+      "amount": 270,
+      "frequency": "monthly",
+      "priority": "medium",
+      "timeframe": null
+    },
+    "professional_expenses": {
+      "owner": "Sarah",
+      "name": "Courses and Memberships",
+      "amount": 600,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "6 months"
+    },
+    "miscellaneous_expenses": {
+      "owner": "Sarah",
+      "name": "Meal Kit and Subscriptions",
+      "amount": 380,
+      "frequency": "monthly",
+      "priority": "medium",
+      "timeframe": null
+    },
+    "notes": "Student loan prioritized, monthly professional expenses essential."
+  },
+  "pensions": {
+    "owner": "Sarah",
+    "type": "Defined Contribution",
+    "provider": "Vanguard",
+    "value": 30000,
+    "policy_number": null
+  },
+  "savings_investments": {
+    "owner": "Sarah",
+    "type": "High-Yield Savings and Brokerage",
+    "provider": "First National Bank and Vanguard",
+    "value": 40000
+  },
+  "other_assets": [],
+  "loans_mortgages": {
+    "owner": "Sarah",
+    "type": "Conventional Mortgage",
+    "provider": "Bank of America",
+    "monthly_cost": 1200,
+    "outstanding_value": 200000,
+    "interest_rate": 3.5,
+    "special_rate": "yes",
+    "final_payment": "25 years"
+  },
+  "health_details": {
+    "client": {
+      "current_state_of_health": "fair",
+      "state_of_health_explanation": "Active with smoking impacts",
+      "smoker": "yes",
+      "cigarettes_per_day": 10,
+      "smoker_since": "18",
+      "long_term_care_needed": null,
+      "long_term_care_explanation": null,
+      "will": "yes",
+      "information_about_will": "Assets to family",
+      "power_of_attorney": "yes",
+      "attorney_details": "Family member"
+    }
+  },
+  "protection_policies": {
+    "owner": "Sarah",
+    "type": "Term Life Insurance",
+    "provider": "Guardian Life",
+    "monthly_cost": 50,
+    "amount_assured": 250000,
+    "in_trust": "yes",
+    "assured": "yes"
+  },
+  "objectives": null
+}

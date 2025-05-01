@@ -1,0 +1,157 @@
+{
+  "personal_details": {
+    "client": {
+      "title": "project manager",
+      "first_name": "Emily",
+      "middle_names": "Rose",
+      "last_name": "Johnson",
+      "known_as": "Emily",
+      "pronouns": "she/her",
+      "date_of_birth": "1990-03-15",
+      "place_of_birth": "Seattle, Washington",
+      "nationality": "American",
+      "gender": "female",
+      "legal_sex": "female",
+      "marital_status": "single",
+      "home_phone": "555-1234",
+      "mobile_phone": "555-123-4567",
+      "email_address": "emilyrose@example.com"
+    },
+    "current_address": {
+      "ownership_status": "renting",
+      "postcode": "12345",
+      "house_name_or_number": "2-bedroom apartment",
+      "street_name": "Maple Street",
+      "address_line3": "123 Pine Street",
+      "address_line4": "Apartment 4B",
+      "town_city": "Springfield",
+      "county": "Greenfield",
+      "country": "USA",
+      "move_in_date": "2020-03-01",
+      "previous_addresses": "studio flat on Oak Avenue"
+    },
+    "dependants_children": []
+  },
+  "employment": {
+    "client": {
+      "country_domiciled": "UK",
+      "resident_for_tax": "UK",
+      "national_insurance_number": "QQ123456C",
+      "employment_status": "full-time",
+      "desired_retirement_age": "60",
+      "occupation": "Marketing Manager",
+      "employer": "Tech Company",
+      "employment_started": "2018-06-01",
+      "highest_rate_of_tax_paid": "20",
+      "notes": "Works as a marketing manager in a tech company."
+    }
+  },
+  "incomes": {
+    "owner": "Emily",
+    "name": "Emily",
+    "amount": "80000",
+    "frequency": "bi-weekly",
+    "net_gross": "gross",
+    "timeframe": "annual"
+  },
+  "expenses": {
+    "loan_repayments": {
+      "owner": "Emily",
+      "name": "student loan, personal loan",
+      "amount": 25000,
+      "frequency": "monthly",
+      "priority": "student loan",
+      "timeframe": "2026-10-01"
+    },
+    "housing_expenses": {
+      "owner": "Client",
+      "name": "rent",
+      "amount": 2200,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "2023-07-01 to 2024-07-01"
+    },
+    "motoring_expenses": {
+      "owner": "individual",
+      "name": "vehicle expenses",
+      "amount": "320",
+      "frequency": "six months",
+      "priority": "high",
+      "timeframe": "monthly"
+    },
+    "personal_expenses": {
+      "owner": "Client",
+      "name": "Phone bill",
+      "amount": "80",
+      "frequency": "monthly",
+      "priority": "no",
+      "timeframe": "November 2022"
+    },
+    "professional_expenses": {
+      "owner": "Client",
+      "name": "Mark",
+      "amount": "2000",
+      "frequency": "1-2",
+      "priority": "yes",
+      "timeframe": "January"
+    },
+    "miscellaneous_expenses": {
+      "owner": "Client",
+      "name": "Subscriptions",
+      "amount": "50",
+      "frequency": "1",
+      "priority": "low",
+      "timeframe": "monthly"
+    },
+    "notes": null
+  },
+  "pensions": {
+    "owner": "client",
+    "type": "defined contribution",
+    "provider": "BigCorp Financial",
+    "value": "50000",
+    "policy_number": "EMP123456"
+  },
+  "savings_investments": {
+    "owner": "joint",
+    "type": "high-yield savings account",
+    "provider": "ABC Bank",
+    "value": "15000"
+  },
+  "other_assets": [],
+  "loans_mortgages": {
+    "owner": "Client",
+    "type": "fixed",
+    "provider": "credit union",
+    "monthly_cost": "300",
+    "outstanding_value": "15000",
+    "interest_rate": "5.5",
+    "special_rate": "3.5%",
+    "final_payment": "2026-01-01"
+  },
+  "health_details": {
+    "client": {
+      "current_state_of_health": "good",
+      "state_of_health_explanation": "Fair; occasional colds and effects from smoking",
+      "smoker": "yes",
+      "cigarettes_per_day": "10",
+      "smoker_since": "2008",
+      "long_term_care_needed": "yes",
+      "long_term_care_explanation": "Might be needed due to family health history",
+      "will": "yes",
+      "information_about_will": "Basic asset distribution to family, healthcare decisions to sister",
+      "power_of_attorney": "yes",
+      "attorney_details": "sister"
+    }
+  },
+  "protection_policies": {
+    "owner": "Emily",
+    "type": "term",
+    "provider": "SecureLife",
+    "monthly_cost": "50",
+    "amount_assured": "500000",
+    "in_trust": "no",
+    "assured": "Emily"
+  },
+  "objectives": null
+}

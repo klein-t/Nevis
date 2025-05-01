@@ -1,0 +1,183 @@
+{
+  "personal_details": {
+    "client": {
+      "title": null,
+      "first_name": "Alex",
+      "middle_names": "Michael",
+      "last_name": "Johnson",
+      "known_as": "Lex",
+      "pronouns": "he/him",
+      "date_of_birth": "1985-07-15",
+      "place_of_birth": "Seattle, Washington",
+      "nationality": "American",
+      "gender": null,
+      "legal_sex": "male",
+      "marital_status": "married",
+      "home_phone": "(555) 987-6543",
+      "mobile_phone": "(555) 123-4567",
+      "email_address": "lex.johnson@email.com"
+    },
+    "current_address": {
+      "ownership_status": "own",
+      "postcode": "62704",
+      "house_name_or_number": "23",
+      "street_name": "Elm Street",
+      "address_line3": null,
+      "address_line4": "Springfield",
+      "town_city": null,
+      "county": "Sangamon County",
+      "country": "United States",
+      "move_in_date": "2020-06",
+      "previous_addresses": [
+        {
+          "ownership_status": null,
+          "postcode": null,
+          "house_name_or_number": null,
+          "street_name": null,
+          "address_line3": null,
+          "address_line4": "Downtown Springfield",
+          "town_city": null,
+          "county": null,
+          "country": null,
+          "move_in_date": null,
+          "previous_address_notes": "Lived downtown for a couple of years before moving to Elm Street."
+        }
+      ]
+    },
+    "dependants_children": []
+  },
+  "employment": {
+    "client": {
+      "country_domiciled": "UK",
+      "resident_for_tax": "yes",
+      "national_insurance_number": "AB123456C",
+      "employment_status": "full-time",
+      "desired_retirement_age": 65,
+      "occupation": "project manager",
+      "employer": "Tech Innovations Ltd",
+      "employment_started": "2010-03",
+      "highest_rate_of_tax_paid": 40,
+      "notes": "Working as a project manager, planning to advance to senior management."
+    }
+  },
+  "incomes": {
+    "owner": null,
+    "name": null,
+    "amount": 120000,
+    "frequency": "yearly",
+    "net_gross": "gross",
+    "timeframe": "two years"
+  },
+  "expenses": {
+    "loan_repayments": {
+      "owner": "Lex",
+      "name": "federal student loan",
+      "amount": 300,
+      "frequency": "monthly",
+      "priority": "top",
+      "timeframe": "10 years"
+    },
+    "housing_expenses": {
+      "owner": "Lex",
+      "name": "rent",
+      "amount": 1200,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "one-year lease until next June"
+    },
+    "motoring_expenses": {
+      "owner": "Lex",
+      "name": "Car expenses",
+      "amount": 600,
+      "frequency": "monthly",
+      "priority": 8,
+      "timeframe": "every couple of months review"
+    },
+    "personal_expenses": {
+      "owner": "Lex",
+      "name": "gym",
+      "amount": 50,
+      "frequency": "monthly",
+      "priority": null,
+      "timeframe": null
+    },
+    "professional_expenses": {
+      "owner": "Lex",
+      "name": "software subscriptions and courses",
+      "amount": 250,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "ongoing"
+    },
+    "miscellaneous_expenses": {
+      "owner": "Lex",
+      "name": "photography and streaming",
+      "amount": 215,
+      "frequency": "monthly",
+      "priority": "medium",
+      "timeframe": null
+    },
+    "notes": "Photography is a priority, streaming service is essential."
+  },
+  "pensions": {
+    "owner": "Lex",
+    "type": "defined contribution",
+    "provider": "ABC Pensions",
+    "value": 100000,
+    "policy_number": "ABC1234567"
+  },
+  "savings_investments": {
+    "owner": "Lex",
+    "type": [
+      "IRA",
+      "401(k)",
+      "brokerage account"
+    ],
+    "provider": [
+      "Vanguard",
+      "Fidelity",
+      "Charles Schwab"
+    ],
+    "value": [
+      150000,
+      100000,
+      20000
+    ]
+  },
+  "other_assets": [],
+  "loans_mortgages": {
+    "owner": "Lex",
+    "type": "unsubsidized",
+    "provider": "Federal government",
+    "monthly_cost": 300,
+    "outstanding_value": 25000,
+    "interest_rate": 5.8,
+    "special_rate": null,
+    "final_payment": "2028"
+  },
+  "health_details": {
+    "client": {
+      "current_state_of_health": "good",
+      "state_of_health_explanation": "Usual aches and pains from aging.",
+      "smoker": "yes",
+      "cigarettes_per_day": 10,
+      "smoker_since": "late teens",
+      "long_term_care_needed": "no",
+      "long_term_care_explanation": "Not sure, but considering due to family history.",
+      "will": "yes",
+      "information_about_will": "Updated last year",
+      "power_of_attorney": "yes",
+      "attorney_details": "Family attorney, reliable."
+    }
+  },
+  "protection_policies": {
+    "owner": "Lex",
+    "type": "term life",
+    "provider": "ABC Insurance",
+    "monthly_cost": 45,
+    "amount_assured": 500000,
+    "in_trust": null,
+    "assured": "Lex"
+  },
+  "objectives": null
+}

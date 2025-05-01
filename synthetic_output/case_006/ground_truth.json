@@ -1,0 +1,157 @@
+{
+  "personal_details": {
+    "client": {
+      "title": "Ms.",
+      "first_name": "Sarah",
+      "middle_names": "James",
+      "last_name": "Mitchell",
+      "known_as": "Sarah",
+      "pronouns": "she/her",
+      "date_of_birth": "1985-03-14",
+      "place_of_birth": "San Diego, California",
+      "nationality": "American",
+      "gender": "female",
+      "legal_sex": "female",
+      "marital_status": "married",
+      "home_phone": "555-1234",
+      "mobile_phone": "555-123-4567",
+      "email_address": "sarah.mitchell@email.com"
+    },
+    "current_address": {
+      "ownership_status": "yes",
+      "postcode": "M20 2AB",
+      "house_name_or_number": "42",
+      "street_name": "Maple Lane",
+      "address_line3": "Maple Street",
+      "address_line4": "Apartment 4B, Springfield, Illinois, 62704",
+      "town_city": "Manchester",
+      "county": "Greater Manchester",
+      "country": "United Kingdom",
+      "move_in_date": "2020-06-01",
+      "previous_addresses": "Flat in city center for five years"
+    },
+    "dependants_children": []
+  },
+  "employment": {
+    "client": {
+      "country_domiciled": "UK",
+      "resident_for_tax": "2015",
+      "national_insurance_number": "AB123456C",
+      "employment_status": "employed",
+      "desired_retirement_age": "60",
+      "occupation": "project manager",
+      "employer": "Innovatech Solutions",
+      "employment_started": "2018-01-01",
+      "highest_rate_of_tax_paid": "40",
+      "notes": "Stable employment but concerns about job security in tech."
+    }
+  },
+  "incomes": {
+    "owner": "Client",
+    "name": "Bookstore and Freelance",
+    "amount": "2400",
+    "frequency": "monthly",
+    "net_gross": "gross",
+    "timeframe": "ongoing"
+  },
+  "expenses": {
+    "loan_repayments": {
+      "owner": "self",
+      "name": "student loan, personal loan",
+      "amount": "200, 150",
+      "frequency": "monthly",
+      "priority": "student loan",
+      "timeframe": "4 years, 2 years"
+    },
+    "housing_expenses": {
+      "owner": "individual investor",
+      "name": "null",
+      "amount": "1200",
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "2024-10-01"
+    },
+    "motoring_expenses": {
+      "owner": "Client",
+      "name": "2019 Honda Accord",
+      "amount": "400",
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "2025"
+    },
+    "personal_expenses": {
+      "owner": "client",
+      "name": "meal kit service",
+      "amount": 240,
+      "frequency": "weekly",
+      "priority": "medium",
+      "timeframe": "monthly"
+    },
+    "professional_expenses": {
+      "owner": "individual",
+      "name": "professional development courses, memberships, travel for conferences",
+      "amount": "600",
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "six months"
+    },
+    "miscellaneous_expenses": {
+      "owner": "Client",
+      "name": "Dining out",
+      "amount": 200,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "monthly"
+    },
+    "notes": null
+  },
+  "pensions": {
+    "owner": "Client",
+    "type": "defined contribution",
+    "provider": "Vanguard",
+    "value": "30000",
+    "policy_number": "P123456"
+  },
+  "savings_investments": {
+    "owner": "Client",
+    "type": "high-yield savings account",
+    "provider": "First National Bank",
+    "value": "15000"
+  },
+  "other_assets": [],
+  "loans_mortgages": {
+    "owner": "yes",
+    "type": "conventional",
+    "provider": "Bank of America",
+    "monthly_cost": "1200",
+    "outstanding_value": "200000",
+    "interest_rate": "3.5",
+    "special_rate": "yes",
+    "final_payment": "2048-12-01"
+  },
+  "health_details": {
+    "client": {
+      "current_state_of_health": "fair",
+      "state_of_health_explanation": "Generally active but affected by smoking",
+      "smoker": "yes",
+      "cigarettes_per_day": "10",
+      "smoker_since": "18",
+      "long_term_care_needed": "null",
+      "long_term_care_explanation": "Need to prepare but no current plan",
+      "will": "yes",
+      "information_about_will": "Assets distributed to family members",
+      "power_of_attorney": "yes",
+      "attorney_details": "Family member assigned"
+    }
+  },
+  "protection_policies": {
+    "owner": "Client",
+    "type": "term",
+    "provider": "Guardian Life",
+    "monthly_cost": "50",
+    "amount_assured": "250000",
+    "in_trust": "yes",
+    "assured": "Client"
+  },
+  "objectives": null
+}

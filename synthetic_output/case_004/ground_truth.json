@@ -1,0 +1,157 @@
+{
+  "personal_details": {
+    "client": {
+      "title": "project manager",
+      "first_name": "Alex",
+      "middle_names": "Michael",
+      "last_name": "Johnson",
+      "known_as": "Lex",
+      "pronouns": "he/him",
+      "date_of_birth": "1985-07-15",
+      "place_of_birth": "Seattle, Washington",
+      "nationality": "American",
+      "gender": "male",
+      "legal_sex": "male",
+      "marital_status": "married",
+      "home_phone": "5559876543",
+      "mobile_phone": "5551234567",
+      "email_address": "lex.johnson@email.com"
+    },
+    "current_address": {
+      "ownership_status": "yes",
+      "postcode": "62704",
+      "house_name_or_number": "23",
+      "street_name": "Elm Street",
+      "address_line3": "Elm Street",
+      "address_line4": "Maplewood, Oak Street",
+      "town_city": "Springfield",
+      "county": "Sangamon",
+      "country": "United States",
+      "move_in_date": "2020-06-01",
+      "previous_addresses": "Downtown apartment"
+    },
+    "dependants_children": []
+  },
+  "employment": {
+    "client": {
+      "country_domiciled": "UK",
+      "resident_for_tax": "yes",
+      "national_insurance_number": "AB123456C",
+      "employment_status": "full-time",
+      "desired_retirement_age": "65",
+      "occupation": "project manager",
+      "employer": "Tech Innovations Ltd.",
+      "employment_started": "2010-03-01",
+      "highest_rate_of_tax_paid": "40",
+      "notes": "Enjoys job and colleagues."
+    }
+  },
+  "incomes": {
+    "owner": "joint",
+    "name": "household",
+    "amount": "120000",
+    "frequency": "monthly",
+    "net_gross": "gross",
+    "timeframe": "monthly"
+  },
+  "expenses": {
+    "loan_repayments": {
+      "owner": "self",
+      "name": "federal student loan",
+      "amount": "25000",
+      "frequency": "monthly",
+      "priority": "yes",
+      "timeframe": "10 years"
+    },
+    "housing_expenses": {
+      "owner": "client",
+      "name": "rent",
+      "amount": 1200,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "2024-06-01"
+    },
+    "motoring_expenses": {
+      "owner": "joint",
+      "name": "Honda Accord, Toyota RAV4",
+      "amount": "600",
+      "frequency": "every two months",
+      "priority": "8",
+      "timeframe": "null"
+    },
+    "personal_expenses": {
+      "owner": "Client",
+      "name": "Rent, Car Payment, Utilities, Groceries, Gym",
+      "amount": "1950",
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "12 months"
+    },
+    "professional_expenses": {
+      "owner": "Client",
+      "name": "professional expenses",
+      "amount": "250",
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "year"
+    },
+    "miscellaneous_expenses": {
+      "owner": "Client",
+      "name": "photography expenses",
+      "amount": 200,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "monthly"
+    },
+    "notes": null
+  },
+  "pensions": {
+    "owner": "yes",
+    "type": "defined contribution",
+    "provider": "ABC Pensions",
+    "value": "100000",
+    "policy_number": "ABC1234567"
+  },
+  "savings_investments": {
+    "owner": "Client",
+    "type": "traditional IRA, 401(k), brokerage account",
+    "provider": "Vanguard, Fidelity, Charles Schwab",
+    "value": "270000"
+  },
+  "other_assets": [],
+  "loans_mortgages": {
+    "owner": "federal government",
+    "type": "unsubsidized",
+    "provider": "federal government",
+    "monthly_cost": "300",
+    "outstanding_value": "25000",
+    "interest_rate": "5.8",
+    "special_rate": "3.5%",
+    "final_payment": "2028"
+  },
+  "health_details": {
+    "client": {
+      "current_state_of_health": "good",
+      "state_of_health_explanation": "Good, with usual aches and pains from aging",
+      "smoker": "yes",
+      "cigarettes_per_day": "10",
+      "smoker_since": "2008",
+      "long_term_care_needed": "null",
+      "long_term_care_explanation": "Uncertain, depends on future health",
+      "will": "yes",
+      "information_about_will": "Updated last year",
+      "power_of_attorney": "yes",
+      "attorney_details": "yes"
+    }
+  },
+  "protection_policies": {
+    "owner": "Client",
+    "type": "term",
+    "provider": "ABC Insurance",
+    "monthly_cost": "45",
+    "amount_assured": "500000",
+    "in_trust": "yes",
+    "assured": "yes"
+  },
+  "objectives": null
+}

@@ -1,0 +1,164 @@
+{
+  "personal_details": {
+    "client": {
+      "title": null,
+      "first_name": "Emily",
+      "middle_names": "Rose",
+      "last_name": "Johnson",
+      "known_as": "Emily",
+      "pronouns": "she/her",
+      "date_of_birth": "1990-03-15",
+      "place_of_birth": "Seattle, Washington",
+      "nationality": "American",
+      "gender": "female",
+      "legal_sex": "female",
+      "marital_status": "single",
+      "home_phone": "555-1234",
+      "mobile_phone": "555-123-4567",
+      "email_address": "emilyrose@example.com"
+    },
+    "current_address": {
+      "ownership_status": "renting",
+      "postcode": "12345",
+      "house_name_or_number": "123",
+      "street_name": "Pine Street",
+      "address_line3": "Apartment 4B",
+      "address_line4": null,
+      "town_city": "Springfield",
+      "county": "Greenfield",
+      "country": null,
+      "move_in_date": "2020-03",
+      "previous_addresses": [
+        {
+          "house_name_or_number": null,
+          "street_name": "Oak Avenue",
+          "town_city": null,
+          "country": null
+        }
+      ]
+    },
+    "dependants_children": []
+  },
+  "employment": {
+    "client": {
+      "country_domiciled": "England",
+      "resident_for_tax": "London",
+      "national_insurance_number": "QQ123456C",
+      "employment_status": "full-time",
+      "desired_retirement_age": 60,
+      "occupation": "Marketing Manager",
+      "employer": "tech company",
+      "employment_started": "2018-06",
+      "highest_rate_of_tax_paid": 20,
+      "notes": null
+    }
+  },
+  "incomes": {
+    "owner": "Emily",
+    "name": "Salary",
+    "amount": 80000,
+    "frequency": "annually",
+    "net_gross": "gross",
+    "timeframe": null
+  },
+  "expenses": {
+    "loan_repayments": {
+      "owner": "Emily",
+      "name": "Student Loan",
+      "amount": 500,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "36 months"
+    },
+    "housing_expenses": {
+      "owner": "Emily",
+      "name": "Rent",
+      "amount": 2200,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "July 2023 - July 2024"
+    },
+    "motoring_expenses": {
+      "owner": "Emily",
+      "name": "Car Expenses",
+      "amount": 320,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": null
+    },
+    "personal_expenses": {
+      "owner": "Emily",
+      "name": "Personal",
+      "amount": null,
+      "frequency": null,
+      "priority": null,
+      "timeframe": null
+    },
+    "professional_expenses": {
+      "owner": "Emily",
+      "name": "Legal Fees",
+      "amount": 2000,
+      "frequency": "annually",
+      "priority": "high",
+      "timeframe": "January"
+    },
+    "miscellaneous_expenses": {
+      "owner": "Emily",
+      "name": "Dining and Subscriptions",
+      "amount": 650,
+      "frequency": "monthly",
+      "priority": "moderate",
+      "timeframe": "review every six months"
+    },
+    "notes": null
+  },
+  "pensions": {
+    "owner": "Emily",
+    "type": "Defined Contribution",
+    "provider": "BigCorp Financial",
+    "value": 50000,
+    "policy_number": "EMP123456"
+  },
+  "savings_investments": {
+    "owner": "Emily and Partner",
+    "type": "High-Yield Savings",
+    "provider": "ABC Bank",
+    "value": 15000
+  },
+  "other_assets": [],
+  "loans_mortgages": {
+    "owner": "Emily",
+    "type": "Car Loan",
+    "provider": "Credit Union",
+    "monthly_cost": 300,
+    "outstanding_value": 15000,
+    "interest_rate": 5.5,
+    "special_rate": "none",
+    "final_payment": "2026"
+  },
+  "health_details": {
+    "client": {
+      "current_state_of_health": "fair",
+      "state_of_health_explanation": "Feels effects of smoking, occasional cold.",
+      "smoker": "yes",
+      "cigarettes_per_day": 10,
+      "smoker_since": "15 years",
+      "long_term_care_needed": "no",
+      "long_term_care_explanation": "Potential future need due to family history.",
+      "will": "yes",
+      "information_about_will": "Assets to family, sister for health decisions.",
+      "power_of_attorney": "yes",
+      "attorney_details": "Sister"
+    }
+  },
+  "protection_policies": {
+    "owner": "Emily",
+    "type": "Term Life Insurance",
+    "provider": "SecureLife",
+    "monthly_cost": 50,
+    "amount_assured": 500000,
+    "in_trust": "no",
+    "assured": "Emily"
+  },
+  "objectives": null
+}

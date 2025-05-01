@@ -1,0 +1,184 @@
+{
+  "personal_details": {
+    "client": {
+      "title": "Mr.",
+      "first_name": "Alex",
+      "middle_names": "Lee",
+      "last_name": "Johnson",
+      "known_as": "Alex",
+      "pronouns": "he/him",
+      "date_of_birth": "1985-03-15",
+      "place_of_birth": "Denver, Colorado",
+      "nationality": "American",
+      "gender": null,
+      "legal_sex": "male",
+      "marital_status": "married",
+      "home_phone": "555-123-4567",
+      "mobile_phone": "555-987-6543",
+      "email_address": "alex.johnson@email.com"
+    },
+    "current_address": {
+      "ownership_status": "own",
+      "postcode": "BN2 1TR",
+      "house_name_or_number": "35",
+      "street_name": "Marine Parade",
+      "address_line3": null,
+      "address_line4": null,
+      "town_city": "Brighton",
+      "county": "East Sussex",
+      "country": "UK",
+      "move_in_date": "2020-01",
+      "previous_addresses": [
+        {
+          "house_name_or_number": "15",
+          "street_name": "Oak Avenue",
+          "postcode": null,
+          "town_city": "Springfield",
+          "county": null,
+          "country": null,
+          "move_in_date": null,
+          "move_out_date": null
+        },
+        {
+          "house_name_or_number": "30",
+          "street_name": "Birch Road",
+          "postcode": null,
+          "town_city": "Springfield",
+          "county": null,
+          "country": null,
+          "move_in_date": null,
+          "move_out_date": null
+        }
+      ]
+    },
+    "dependants_children": []
+  },
+  "employment": {
+    "client": {
+      "country_domiciled": "UK",
+      "resident_for_tax": "yes",
+      "national_insurance_number": "AB 12 34 56 C",
+      "employment_status": "full-time",
+      "desired_retirement_age": 65,
+      "occupation": "software developer",
+      "employer": "Tech Innovations",
+      "employment_started": "2017-03",
+      "highest_rate_of_tax_paid": "40%",
+      "notes": null
+    }
+  },
+  "incomes": {
+    "owner": "Alex Johnson",
+    "name": "salary",
+    "amount": 5500,
+    "frequency": "bi-weekly",
+    "net_gross": "gross",
+    "timeframe": null
+  },
+  "expenses": {
+    "loan_repayments": {
+      "owner": "Alex Johnson",
+      "name": "Personal Loan with XYZ Bank",
+      "amount": 300,
+      "frequency": "monthly",
+      "priority": 7,
+      "timeframe": "ends in early 2025"
+    },
+    "housing_expenses": {
+      "owner": "Alex Johnson",
+      "name": "Mortgage",
+      "amount": 1200,
+      "frequency": "monthly",
+      "priority": 10,
+      "timeframe": "October 1, 2043"
+    },
+    "motoring_expenses": {
+      "owner": "Alex Johnson",
+      "name": "Vehicle expenses",
+      "amount": 300,
+      "frequency": "monthly",
+      "priority": null,
+      "timeframe": null
+    },
+    "personal_expenses": {
+      "owner": "Alex Johnson",
+      "name": "Gym, Netflix, Spotify, Hobby",
+      "amount": 190,
+      "frequency": "monthly",
+      "priority": null,
+      "timeframe": null
+    },
+    "professional_expenses": {
+      "owner": "Alex Johnson",
+      "name": "Professional development and operational costs",
+      "amount": 4000,
+      "frequency": "yearly",
+      "priority": "high",
+      "timeframe": null
+    },
+    "miscellaneous_expenses": {
+      "owner": "Alex Johnson",
+      "name": "Various including dining out",
+      "amount": 400,
+      "frequency": "monthly",
+      "priority": 5,
+      "timeframe": null
+    },
+    "notes": null
+  },
+  "pensions": {
+    "owner": "Alex Johnson",
+    "type": "defined contribution",
+    "provider": "Bright Future Pension Services",
+    "value": 25000,
+    "policy_number": "BF12345678"
+  },
+  "savings_investments": {
+    "owner": "Alex Johnson",
+    "type": [
+      "savings account",
+      "401(k)"
+    ],
+    "provider": [
+      "Bank of America",
+      "Fidelity"
+    ],
+    "value": 65000
+  },
+  "other_assets": [],
+  "loans_mortgages": {
+    "owner": "Alex Johnson",
+    "type": "mortgage",
+    "provider": "NatWest",
+    "monthly_cost": 1200,
+    "outstanding_value": 200000,
+    "interest_rate": 3.5,
+    "special_rate": null,
+    "final_payment": "2043-10-01"
+  },
+  "health_details": {
+    "client": {
+      "current_state_of_health": "fair",
+      "state_of_health_explanation": null,
+      "smoker": "yes",
+      "cigarettes_per_day": 10,
+      "smoker_since": "age 18",
+      "long_term_care_needed": "yes",
+      "long_term_care_explanation": "Considering needs due to smoking",
+      "will": "in process",
+      "information_about_will": "Drafting with local attorney",
+      "power_of_attorney": "yes",
+      "attorney_details": "Working with an attorney in town"
+    }
+  },
+  "protection_policies": {
+    "owner": "Alex Johnson",
+    "type": "term life insurance",
+    "provider": "Aviva",
+    "monthly_cost": 30,
+    "amount_assured": 250000,
+    "in_trust": "yes",
+    "assured": null
+  },
+  "objectives": null
+}

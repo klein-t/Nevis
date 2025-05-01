@@ -1,0 +1,157 @@
+{
+  "personal_details": {
+    "client": {
+      "title": "Ms.",
+      "first_name": "Emily",
+      "middle_names": "Anne",
+      "last_name": "Johnson",
+      "known_as": "Emily",
+      "pronouns": "she/her",
+      "date_of_birth": "1985-03-15",
+      "place_of_birth": "Seattle, Washington",
+      "nationality": "American",
+      "gender": "female",
+      "legal_sex": "female",
+      "marital_status": "married",
+      "home_phone": "206-555-0199",
+      "mobile_phone": "206-555-0123",
+      "email_address": "emily.johnson@email.com"
+    },
+    "current_address": {
+      "ownership_status": "yes",
+      "postcode": "12345",
+      "house_name_or_number": "22",
+      "street_name": "Maple Street",
+      "address_line3": "Maple Street, Maplewood",
+      "address_line4": "07052",
+      "town_city": "Springfield",
+      "county": "Greene County",
+      "country": "United States",
+      "move_in_date": "2015-06-01",
+      "previous_addresses": "14 Elm Street"
+    },
+    "dependants_children": []
+  },
+  "employment": {
+    "client": {
+      "country_domiciled": "Canada",
+      "resident_for_tax": "yes",
+      "national_insurance_number": "QQ123456C",
+      "employment_status": "full-time",
+      "desired_retirement_age": "65",
+      "occupation": "marketing manager",
+      "employer": "Creative Solutions Ltd.",
+      "employment_started": "2015-03-01",
+      "highest_rate_of_tax_paid": "40",
+      "notes": "Consults on marketing strategies for small businesses; 4 years in consulting; 6 years in-house agency experience."
+    }
+  },
+  "incomes": {
+    "owner": "individual",
+    "name": "primary employment and freelance",
+    "amount": "85000",
+    "frequency": "bi-weekly",
+    "net_gross": "net",
+    "timeframe": "year"
+  },
+  "expenses": {
+    "loan_repayments": {
+      "owner": "both",
+      "name": "mortgage",
+      "amount": 1500,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "25 years"
+    },
+    "housing_expenses": {
+      "owner": "Client",
+      "name": "mortgage",
+      "amount": 1200,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "25 years"
+    },
+    "motoring_expenses": {
+      "owner": "client",
+      "name": "Honda Civic",
+      "amount": "5000",
+      "frequency": "daily",
+      "priority": "high",
+      "timeframe": "5-7 years"
+    },
+    "personal_expenses": {
+      "owner": "Client",
+      "name": "Gym Membership",
+      "amount": "50",
+      "frequency": "monthly",
+      "priority": "medium",
+      "timeframe": "1 year"
+    },
+    "professional_expenses": {
+      "owner": "Client",
+      "name": "Consulting business expenses",
+      "amount": 300,
+      "frequency": "monthly",
+      "priority": "yes",
+      "timeframe": "2 years"
+    },
+    "miscellaneous_expenses": {
+      "owner": "Client",
+      "name": "Netflix",
+      "amount": 15,
+      "frequency": "monthly",
+      "priority": "low",
+      "timeframe": "ongoing"
+    },
+    "notes": null
+  },
+  "pensions": {
+    "owner": "Emily",
+    "type": "defined contribution",
+    "provider": "FutureSecure",
+    "value": "50000",
+    "policy_number": "12345-6789"
+  },
+  "savings_investments": {
+    "owner": "Client",
+    "type": "mixed",
+    "provider": "Vanguard",
+    "value": "60000"
+  },
+  "other_assets": [],
+  "loans_mortgages": {
+    "owner": "Emily",
+    "type": "fixed-rate",
+    "provider": "local bank",
+    "monthly_cost": "1200",
+    "outstanding_value": "200000",
+    "interest_rate": "3.5",
+    "special_rate": "3.5",
+    "final_payment": "2048"
+  },
+  "health_details": {
+    "client": {
+      "current_state_of_health": "fair",
+      "state_of_health_explanation": "Generally fair, experiencing some fatigue and breathlessness.",
+      "smoker": "yes",
+      "cigarettes_per_day": "10",
+      "smoker_since": "2013-01-01",
+      "long_term_care_needed": "yes",
+      "long_term_care_explanation": "Assistance needed for daily activities as aging progresses.",
+      "will": "no",
+      "information_about_will": "no",
+      "power_of_attorney": "no",
+      "attorney_details": "null"
+    }
+  },
+  "protection_policies": {
+    "owner": "Emily",
+    "type": "term",
+    "provider": "Prudential",
+    "monthly_cost": "30",
+    "amount_assured": "500000",
+    "in_trust": "no",
+    "assured": "husband"
+  },
+  "objectives": null
+}

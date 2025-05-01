@@ -1,0 +1,157 @@
+{
+  "personal_details": {
+    "client": {
+      "title": "Mr.",
+      "first_name": "Alex",
+      "middle_names": "Lee",
+      "last_name": "Johnson",
+      "known_as": "Alex",
+      "pronouns": "he/him",
+      "date_of_birth": "1985-03-15",
+      "place_of_birth": "Denver, Colorado",
+      "nationality": "American",
+      "gender": "male",
+      "legal_sex": "male",
+      "marital_status": "married",
+      "home_phone": "555-123-4567",
+      "mobile_phone": "555-987-6543",
+      "email_address": "alex.johnson@email.com"
+    },
+    "current_address": {
+      "ownership_status": "yes",
+      "postcode": "BN2 1TR",
+      "house_name_or_number": "35",
+      "street_name": "Marine Parade",
+      "address_line3": "Maple Street",
+      "address_line4": "Springfield",
+      "town_city": "Brighton",
+      "county": "East Sussex",
+      "country": "UK",
+      "move_in_date": "2020-01-01",
+      "previous_addresses": "15 Oak Avenue; 30 Birch Road"
+    },
+    "dependants_children": []
+  },
+  "employment": {
+    "client": {
+      "country_domiciled": "UK",
+      "resident_for_tax": "yes",
+      "national_insurance_number": "AB 12 34 56 C",
+      "employment_status": "full-time",
+      "desired_retirement_age": "65",
+      "occupation": "software developer",
+      "employer": "Tech Innovations",
+      "employment_started": "2017-03",
+      "highest_rate_of_tax_paid": "40",
+      "notes": "Enjoys problem-solving and works with a good team."
+    }
+  },
+  "incomes": {
+    "owner": "me",
+    "name": "Tech Innovations",
+    "amount": "5500",
+    "frequency": "bi-weekly",
+    "net_gross": "gross",
+    "timeframe": "null"
+  },
+  "expenses": {
+    "loan_repayments": {
+      "owner": "Client",
+      "name": "XYZ Bank personal loan",
+      "amount": "300",
+      "frequency": "monthly",
+      "priority": "7",
+      "timeframe": "2025-01-01"
+    },
+    "housing_expenses": {
+      "owner": "Client",
+      "name": "Flat Rent",
+      "amount": 1800,
+      "frequency": "monthly",
+      "priority": "high",
+      "timeframe": "3 years"
+    },
+    "motoring_expenses": {
+      "owner": "client",
+      "name": "2015 Ford Focus",
+      "amount": 300,
+      "frequency": "monthly",
+      "priority": "reliability",
+      "timeframe": "2024-06-01"
+    },
+    "personal_expenses": {
+      "owner": "Client",
+      "name": "Netflix",
+      "amount": "2500",
+      "frequency": "monthly",
+      "priority": "mortgage",
+      "timeframe": "2021-01-01"
+    },
+    "professional_expenses": {
+      "owner": "client",
+      "name": "professional development and operational costs",
+      "amount": "4000",
+      "frequency": "sporadic",
+      "priority": "high",
+      "timeframe": "yearly"
+    },
+    "miscellaneous_expenses": {
+      "owner": "Client",
+      "name": "gym membership",
+      "amount": 60,
+      "frequency": "monthly",
+      "priority": "5",
+      "timeframe": "quarterly"
+    },
+    "notes": null
+  },
+  "pensions": {
+    "owner": "Alex",
+    "type": "defined contribution",
+    "provider": "Bright Future Pension Services",
+    "value": "25000",
+    "policy_number": "BF12345678"
+  },
+  "savings_investments": {
+    "owner": "Client",
+    "type": "savings, retirement",
+    "provider": "Bank of America, Fidelity",
+    "value": "65000"
+  },
+  "other_assets": [],
+  "loans_mortgages": {
+    "owner": "yes",
+    "type": "fixed",
+    "provider": "NatWest",
+    "monthly_cost": "1200",
+    "outstanding_value": "200000",
+    "interest_rate": "3.5",
+    "special_rate": "3.5",
+    "final_payment": "2043-10-01"
+  },
+  "health_details": {
+    "client": {
+      "current_state_of_health": "fair",
+      "state_of_health_explanation": "Typical wear and tear, no major issues",
+      "smoker": "yes",
+      "cigarettes_per_day": "10",
+      "smoker_since": "2011-01-01",
+      "long_term_care_needed": "yes",
+      "long_term_care_explanation": "Might need support if health declines",
+      "will": "yes",
+      "information_about_will": "Basics are sorted, working with local attorney",
+      "power_of_attorney": "yes",
+      "attorney_details": "Local attorney, helpful with will drafting"
+    }
+  },
+  "protection_policies": {
+    "owner": "self",
+    "type": "term",
+    "provider": "Aviva",
+    "monthly_cost": "30",
+    "amount_assured": "250000",
+    "in_trust": "yes",
+    "assured": "250000"
+  },
+  "objectives": null
+}

@@ -1,0 +1,157 @@
+{
+  "personal_details": {
+    "client": {
+      "title": "Project Manager",
+      "first_name": "Emily",
+      "middle_names": "Sofia",
+      "last_name": "Thompson",
+      "known_as": "Sophie",
+      "pronouns": "she/her",
+      "date_of_birth": "1985-03-15",
+      "place_of_birth": "Sydney",
+      "nationality": "Australian",
+      "gender": "female",
+      "legal_sex": "female",
+      "marital_status": "divorced",
+      "home_phone": "555-1234",
+      "mobile_phone": "0412 345 678",
+      "email_address": "sophie.thompson@email.com"
+    },
+    "current_address": {
+      "ownership_status": "renting",
+      "postcode": "12345",
+      "house_name_or_number": "24",
+      "street_name": "Maple Street",
+      "address_line3": "Maple Street",
+      "address_line4": "Greene County",
+      "town_city": "Springfield",
+      "county": "Greene",
+      "country": "USA",
+      "move_in_date": "2022-10-01",
+      "previous_addresses": "Rivertown"
+    },
+    "dependants_children": []
+  },
+  "employment": {
+    "client": {
+      "country_domiciled": "Australia",
+      "resident_for_tax": "yes",
+      "national_insurance_number": "123-456-789",
+      "employment_status": "employed",
+      "desired_retirement_age": "60",
+      "occupation": "Marketing Manager",
+      "employer": "Tech Company",
+      "employment_started": "2018-01-01",
+      "highest_rate_of_tax_paid": "37",
+      "notes": "Decent health benefits and good superannuation plan"
+    }
+  },
+  "incomes": {
+    "owner": "Client",
+    "name": "salary",
+    "amount": 75000,
+    "frequency": "monthly",
+    "net_gross": "gross",
+    "timeframe": "annual"
+  },
+  "expenses": {
+    "loan_repayments": {
+      "owner": "client",
+      "name": "car loan",
+      "amount": 250,
+      "frequency": "monthly",
+      "priority": "medium",
+      "timeframe": "2027-09-01"
+    },
+    "housing_expenses": {
+      "owner": "shared",
+      "name": "Urban Living",
+      "amount": "1500",
+      "frequency": "annually",
+      "priority": "high",
+      "timeframe": "monthly"
+    },
+    "motoring_expenses": {
+      "owner": "Sophie",
+      "name": "fuel",
+      "amount": 200,
+      "frequency": "weekly",
+      "priority": "high",
+      "timeframe": "monthly"
+    },
+    "personal_expenses": {
+      "owner": "Client",
+      "name": "Entertainment",
+      "amount": 300,
+      "frequency": "monthly",
+      "priority": "medium",
+      "timeframe": "next year"
+    },
+    "professional_expenses": {
+      "owner": "individual",
+      "name": "continuing education and professional memberships",
+      "amount": "2500",
+      "frequency": "annual for education, monthly for memberships",
+      "priority": "high",
+      "timeframe": "annual and monthly"
+    },
+    "miscellaneous_expenses": {
+      "owner": "Client",
+      "name": "Books",
+      "amount": 40,
+      "frequency": "weekly",
+      "priority": "moderate",
+      "timeframe": "monthly"
+    },
+    "notes": null
+  },
+  "pensions": {
+    "owner": "yes",
+    "type": "401(k)",
+    "provider": "Wells Fargo",
+    "value": "25000",
+    "policy_number": "987654321"
+  },
+  "savings_investments": {
+    "owner": "Client",
+    "type": "investment portfolio",
+    "provider": "Vanguard",
+    "value": 15000
+  },
+  "other_assets": [],
+  "loans_mortgages": {
+    "owner": "Client",
+    "type": "fixed",
+    "provider": "Big Bank Corp",
+    "monthly_cost": "1200",
+    "outstanding_value": "150000",
+    "interest_rate": "3.5",
+    "special_rate": "3.2%",
+    "final_payment": "2038-10-01"
+  },
+  "health_details": {
+    "client": {
+      "current_state_of_health": "fair",
+      "state_of_health_explanation": "Feeling fair, managing with exercise and diet.",
+      "smoker": "yes",
+      "cigarettes_per_day": 10,
+      "smoker_since": "2011",
+      "long_term_care_needed": "no",
+      "long_term_care_explanation": "Important for covering future care costs due to health reasons",
+      "will": "yes",
+      "information_about_will": "Basic arrangements for family, needs update.",
+      "power_of_attorney": "no",
+      "attorney_details": "no"
+    }
+  },
+  "protection_policies": {
+    "owner": "Client",
+    "type": "term life insurance",
+    "provider": "Life Insurance Co.,Secure Future",
+    "monthly_cost": "400",
+    "amount_assured": "250000,500000",
+    "in_trust": "yes",
+    "assured": "Children"
+  },
+  "objectives": null
+}

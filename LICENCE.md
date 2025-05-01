@@ -1,6 +1,6 @@
 # Restrictive License Agreement
 
-Copyright (c) 2024 Klein Tahiraj. All rights reserved.
+Copyright (c) 2025 Klein Tahiraj. All rights reserved.
 
 ## Terms and Conditions
 

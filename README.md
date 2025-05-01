@@ -45,7 +45,7 @@ We also keep track of topics that have already been explained to avoid repetitio
 
 
 
-## Extraction
+## EXTRACTION
 
 Our extraction pipeline processes financial adviser-client conversation transcripts to automatically pull out structured data into a standard JSON format. It takes the transcript files from our synthetic data generator and creates matching structured data files that capture all the client information.
 We send each complete transcript to the LLM in a single API call, extracting all information at once. We provide an empty JSON template to give the model a clear extraction target to fill in.
@@ -137,28 +137,21 @@ We've put significant effort into normalizing the data to ensure fair comparison
 
 # RESULTS
 
-The analysis pipeline (`analyze_data.py`) was run to compare the structured data extracted by the LLM (`extracted_data.json`) against the synthetically generated ground truth (`ground_truth.json`) for 6 test cases.
+The analysis pipeline (`analyze_data.py`) compared the structured data extracted by the LLM (`extracted_data.json`) against the synthetically generated ground truth (`ground_truth.json`) for 6 test cases.
 
-The key findings are summarized below:
+The key findings reveal an overall accuracy of **81.3%** in the extraction process. Out of 246 fields compared across all cases, there were 198 exact matches, 2 partial matches, 46 mismatches, and 9 fields missing from the extracted data.
 
-*   **Overall Accuracy**: The extraction process achieved an overall accuracy of **81.3%**.
-    *   Exact Matches: 198
-    *   Partial Matches: 2
-    *   Mismatches: 46
-    *   Missing Fields (in extracted data): 9
-    *   Total Fields Compared: 246
-*   **Performance by Category**: Accuracy varied across different data categories:
-    *   High Accuracy: `pensions` (100%), `employment` (93.3%), `health_details` (91.7%), `personal_details` (89.2%), `loans_mortgages` (83.3%)
-    *   Lower Accuracy: `expenses` (58.3%), `protection_policies` (58.3%), `incomes` (45.8%)
-*   **Common Issues**: The fields with the most frequent extraction errors included:
-    *   `incomes.name` (5 issues: 4 mismatches, 1 missing)
-    *   `protection_policies.provider` (5 issues: 4 mismatches, 1 missing)
-    *   `protection_policies.type` (5 issues: 5 mismatches)
-*   **Visualizations**: The `comparison_results` directory contains plots visualizing these results:
-    *   `case_accuracy.png`: Accuracy per individual test case.
-    *   `category_accuracy.png`: Accuracy per data category.
-    *   `common_issues.png`: Most common field-level errors.
-*   **Detailed Report**: A detailed JSON report (`summary_report.json`) with per-case metrics, category breakdowns, and specific examples of errors is available in the `comparison_results` directory.
+Performance varied significantly across different data categories. High accuracy was observed for `pensions` (100%), `employment` (93.3%), `health_details` (91.7%), `personal_details` (89.2%), and `loans_mortgages` (83.3%). Conversely, categories like `expenses` (58.3%), `protection_policies` (58.3%), and `incomes` (45.8%) showed lower accuracy rates, indicating areas for potential improvement.
+
+Visualizations summarizing these results are available below and in the `comparison_results` directory:
+
+<img src="comparison_results/case_accuracy.png" alt="Case Accuracy" width="400"/>
+
+<img src="comparison_results/category_accuracy.png" alt="Category Accuracy" width="400"/>
+
+<img src="comparison_results/common_issues.png" alt="Common Issues" width="400"/>
+
+For a more granular view, including per-case metrics, detailed category breakdowns, and specific examples of extraction errors, please refer to the comprehensive HTML report: `comparison_results/detailed_report.html`.
 
 # POSSIBLE IMPROVEMENTS:
 * Use more advanced models for generating the conversation. I used gpt4o-mini (to keep things cheap), more expressive models would perform better;

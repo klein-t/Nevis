@@ -1,30 +1,6 @@
 """synthetic_data_generator.py
 
-Generate a synthetic adviser-client conversation **and** the aligned ground-truth JSON
-information (CIF-style) in one shot.  The script follows the iterative prompting
-scheme outlined in the accompanying design note:
-   • always starts with the Personal Details / Client-1 block
-   • at each turn chooses another still-empty section, shuffles its sub-keys and
-     asks the LLM to reveal them in that order
-   • stores the conversation chunk plus the extracted values
-   • loops until every scalar field in the template JSON is filled (or until the
-     maximum turns is reached)
-
-The result is written to disk as:
-   ├─ <out_dir>/transcript.md
-   └─ <out_dir>/ground_truth.json
-
--------------
-Quick start
--------------
-$ export OPENAI_API_KEY=sk-...
-$ python synthetic_data_generator.py  \
-          --out-dir synthetic_case_01  \
-          --model gpt-4o-mini          \
-          --temperature 0.8            \
-          --seed 123
-
-Dependencies: openai>=1.3.5, rich (optional for colourful logging)
+Generate a synthetic adviser-client conversation 
 """
 from __future__ import annotations
 
@@ -44,6 +20,8 @@ try:
 except ImportError as exc:  # pragma: no cover
     raise SystemExit("[ERROR] The 'openai' package is required.  pip install openai>=1.3.5") from exc
 
+from gfft import gfft_template
+
 # Configure logging
 logging.basicConfig(
     level=logging.DEBUG,
@@ -58,96 +36,6 @@ try:
 except ModuleNotFoundError:  # pragma: no cover
     print = lambda x: None  # noqa: E731: dummy silent logger if rich missing
 
-# -----------------------------------------------------------------------------
-# 1.  Canonical empty template --------------------------------------------------
-# -----------------------------------------------------------------------------
-
-def cif_template() -> Dict:
-    """Deep‑copyable template JSON with every scalar value set to *None* (or empty)."""
-    return {
-        "personal_details": {
-            "client": {
-                "title": None,
-                "first_name": None,
-                "middle_names": None,
-                "last_name": None,
-                "known_as": None,
-                "pronouns": None,
-                "date_of_birth": None,
-                "place_of_birth": None,
-                "nationality": None,
-                "gender": None,
-                "legal_sex": None,
-                "marital_status": None,
-                "home_phone": None,
-                "mobile_phone": None,
-                "email_address": None,
-            },
-            "current_address": {
-                "ownership_status": None,
-                "postcode": None,
-                "house_name_or_number": None,
-                "street_name": None,
-                "address_line3": None,
-                "address_line4": None,
-                "town_city": None,
-                "county": None,
-                "country": None,
-                "move_in_date": None,
-                "previous_addresses": [],  # list of dicts
-            },
-            "dependants_children": [],
-        },
-        "employment": {
-            "client": {
-                "country_domiciled": None,
-                "resident_for_tax": None,
-                "national_insurance_number": None,
-                "employment_status": None,
-                "desired_retirement_age": None,
-                "occupation": None,
-                "employer": None,
-                "employment_started": None,
-                "highest_rate_of_tax_paid": None,
-                "notes": None,
-            },
-        },
-        "incomes": [],
-        "expenses": {
-            "loan_repayments": [],
-            "housing_expenses": [],
-            "motoring_expenses": [],
-            "personal_expenses": [],
-            "professional_expenses": [],
-            "miscellaneous_expenses": [],
-            "notes": None,
-        },
-        "pensions": [],
-        "savings_investments": [],
-        "other_assets": [],
-        "loans_mortgages": [],
-        "health_details": {
-            "client": {
-                "current_state_of_health": None,
-                "state_of_health_explanation": None,
-                "smoker": None,
-                "cigarettes_per_day": None,
-                "smoker_since": None,
-                "long_term_care_needed": None,
-                "long_term_care_explanation": None,
-                "will": None,
-                "information_about_will": None,
-                "power_of_attorney": None,
-                "attorney_details": None,
-            },
-        },
-        "protection_policies": [],
-        "objectives": None,
-    }
-
-# -----------------------------------------------------------------------------
-# 2.  Prompt builder -----------------------------------------------------------
-# -----------------------------------------------------------------------------
 
 def build_prompt(last_lines: str, section_path: str, subkeys: List[str]) -> str:
     """Assemble the few‑shot instructions + section request for this turn."""
@@ -170,7 +58,7 @@ def build_prompt(last_lines: str, section_path: str, subkeys: List[str]) -> str:
     elif len(shuffled) >= 2:
         json_template = f'"{shuffled[0]}": "…", "{shuffled[1]}": "…" /* etc. */'
     else:
-        # This should never happen due to the check above
+        # This should never happen due to the check above, but just in case
         logger.critical(f"Unexpected empty shuffled list for {section_path}")
         
     return textwrap.dedent(
@@ -183,8 +71,7 @@ def build_prompt(last_lines: str, section_path: str, subkeys: List[str]) -> str:
         ---
 
         This turn must focus on **{section_path}**.  Make sure the dialogue uncovers
-        *all* the following details **in exactly this order** – keep the order even
-        if it feels unusual:
+        *all* the following details, batch them together if possible. Keep the conversation casual, some details can be asked in follow up questions:
         {bullets}
 
         IMPORTANT: Always clearly indicate who is speaking by prefixing each turn with "Adviser:" or "Client:" 
@@ -250,9 +137,9 @@ def build_digression_prompt(last_lines: str, partial_json: Dict, already_explain
                 if isinstance(v, dict):
                     fields.extend(collect_fields(v, path))
                 elif isinstance(v, list) and v and all(isinstance(item, dict) for item in v):
-                    # Skip array fields for simplicity
+                    # Skip array fields for simplicity...
                     pass
-                elif v not in (None, [], {}):  # Field has a value
+                elif v not in (None, [], {}): 
                     fields.append(path)
         return fields
     
@@ -350,7 +237,7 @@ def run_driver_loop(model: str = "gpt-4o-mini", *, temperature: float = 0.8, see
     final_transcript : str
         Full conversation, chunks separated by blank lines.
     final_json : Dict
-        Populated CIF‑style object.
+        Populated GFFT‑style object.
     """
     if seed is not None:
         random.seed(seed)
@@ -358,7 +245,7 @@ def run_driver_loop(model: str = "gpt-4o-mini", *, temperature: float = 0.8, see
     else:
         logger.info("No random seed provided")
 
-    master_json = cif_template()
+    master_json = gfft_template()
 
     # Ordered deque of section paths we want to cover (edit / extend as needed)
     sections = collections.deque([
@@ -366,13 +253,25 @@ def run_driver_loop(model: str = "gpt-4o-mini", *, temperature: float = 0.8, see
         "personal_details.current_address",
         "employment.client",
         "health_details.client",
+        "incomes",
+        "expenses.loan_repayments",
+        "expenses.housing_expenses",
+        "expenses.motoring_expenses",
+        "expenses.personal_expenses",
+        "expenses.professional_expenses",
+        "expenses.miscellaneous_expenses",
+        "pensions",
+        "savings_investments",
+        "loans_mortgages",
+        "protection_policies",
     ])
     logger.info(f"Initial sections queue: {list(sections)}")
     
     # Keep first deterministic, shuffle the rest
+    initial_section = sections[0] # Keep personal_details.client first
     remaining_sections = list(sections)[1:]
     random.shuffle(remaining_sections)
-    sections = collections.deque([sections[0]] + remaining_sections)
+    sections = collections.deque([initial_section] + remaining_sections)
     logger.info(f"Shuffled sections queue: {list(sections)}")
 
     transcript_chunks: List[str] = []
@@ -416,8 +315,6 @@ def run_driver_loop(model: str = "gpt-4o-mini", *, temperature: float = 0.8, see
                 last_lines = "\n".join(chunk.splitlines()[-3:])  # last 3 lines
                 
                 # Extract fields that were just explained from the prompt
-                # This is a simplification; in practice, you might want to parse the prompt
-                # to extract the exact field names that were requested to be explained
                 for line in prompt.splitlines():
                     if line.strip().startswith("- "):
                         field = line.strip()[2:].strip()
@@ -553,15 +450,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--model", default="gpt-4o-mini", help="OpenAI chat model")
     parser.add_argument("--temperature", type=float, default=0.8, help="sampling temperature")
     parser.add_argument("--seed", type=int, default=None, help="random seed for reproducibility")
-    parser.add_argument("--num-cases", type=int, default=1, help="number of synthetic cases to generate")
+    parser.add_argument("--num-cases", type=int, default=10, help="number of synthetic cases to generate")
     parser.add_argument("--log-file", type=str, default=None, help="file to save logs to")
     return parser.parse_args()
 
 
-def main() -> None:  # pragma: no cover
+def main() -> None:  
     args = parse_args()
     
-    # Configure file logging if requested
     if args.log_file:
         file_handler = logging.FileHandler(args.log_file)
         file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
@@ -581,7 +477,7 @@ def main() -> None:  # pragma: no cover
     for i in range(1, args.num_cases + 1):
         logger.info(f"Starting case {i} of {args.num_cases}")
         case_dir = base_dir / f"case_{i:03d}"
-        # If seed is provided, increment it for each case to ensure variation
+
         case_seed = None if args.seed is None else args.seed + i - 1
         
         try:

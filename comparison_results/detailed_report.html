@@ -1,0 +1,552 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JSON Comparison Report</title>
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background-color: #f4f7f6; color: #333; }
+            h1, h2, h3 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; }
+            h1 { font-size: 2em; } h2 { font-size: 1.5em; margin-top: 30px; }
+            table { border-collapse: collapse; width: 100%; margin-bottom: 25px; box-shadow: 0 2px 3px rgba(0,0,0,0.1); background-color: #fff; }
+            th, td { padding: 10px 12px; text-align: left; border: 1px solid #ddd; }
+            th { background-color: #e9ecef; color: #495057; font-weight: 600; }
+            tr:nth-child(even) { background-color: #f8f9fa; }
+            tr:hover { background-color: #e9ecef; }
+            .good { color: #28a745; font-weight: bold; }
+            .bad { color: #dc3545; font-weight: bold; }
+            .warning { color: #ffc107; font-weight: bold; }
+            .chart { margin: 30px auto; text-align: center; background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 3px rgba(0,0,0,0.1); }
+            .chart img { max-width: 90%; height: auto; border: 1px solid #ddd; }
+            .example { border-left: 3px solid #007bff; padding-left: 10px; margin-bottom: 8px; font-size: 0.9em; }
+            .value { background-color: #eef; padding: 2px 4px; border-radius: 3px; font-family: monospace; word-break: break-all; }
+            code { background-color: #f1f1f1; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+        </style>
+    </head>
+    <body>
+        <h1>JSON Comparison Report</h1>
+        <p>Generated on: 2025-05-01 15:47:54</p>
+
+        <h2>Overall Metrics</h2>
+        
+        <table>
+            <tr><th>Metric</th><th>Value</th></tr>
+            <tr><td>Total Cases Processed</td><td>6</td></tr>
+            <tr><td>Total Valid Cases</td><td>6</td></tr>
+            <tr><td>Overall Accuracy</td><td class="warning">80.89%</td></tr>
+            <tr><td>Total Fields Compared</td><td>246</td></tr>
+            <tr><td>Exact Matches</td><td>197 (80.1%)</td></tr>
+            <tr><td>Partial Matches</td><td>2 (0.8%)</td></tr>
+            <tr><td>Mismatches (incl. missing)</td><td>47 (19.1%)</td></tr>
+        </table>
+    
+
+        <div class="chart"><img src="case_accuracy.png" alt="Case Accuracy Chart"></div>
+        <div class="chart"><img src="category_accuracy.png" alt="Category Accuracy Chart"></div>
+
+        <h2>Case-by-Case Metrics</h2>
+        
+        <table>
+            <tr><th>Case</th><th>Accuracy</th><th>Exact</th><th>Partial</th><th>Mismatch</th><th>Total</th></tr>
+    
+            <tr>
+                <td>case_001</td>
+                <td class="warning">85.37%</td>
+                <td>34</td>
+                <td>1</td>
+                <td>6</td>
+                <td>41</td>
+            </tr>
+        
+            <tr>
+                <td>case_002</td>
+                <td class="warning">78.05%</td>
+                <td>32</td>
+                <td>0</td>
+                <td>9</td>
+                <td>41</td>
+            </tr>
+        
+            <tr>
+                <td>case_003</td>
+                <td class="good">90.24%</td>
+                <td>37</td>
+                <td>0</td>
+                <td>4</td>
+                <td>41</td>
+            </tr>
+        
+            <tr>
+                <td>case_004</td>
+                <td class="warning">70.73%</td>
+                <td>28</td>
+                <td>1</td>
+                <td>12</td>
+                <td>41</td>
+            </tr>
+        
+            <tr>
+                <td>case_005</td>
+                <td class="warning">80.49%</td>
+                <td>33</td>
+                <td>0</td>
+                <td>8</td>
+                <td>41</td>
+            </tr>
+        
+            <tr>
+                <td>case_006</td>
+                <td class="warning">80.49%</td>
+                <td>33</td>
+                <td>0</td>
+                <td>8</td>
+                <td>41</td>
+            </tr>
+        </table>
+
+        <h2>Category Metrics</h2>
+        
+        <table>
+            <tr><th>Category</th><th>Accuracy</th><th>Exact</th><th>Partial</th><th>Mismatch</th><th>Total</th></tr>
+    
+            <tr>
+                <td>pensions</td>
+                <td class="good">100.00%</td>
+                <td>18</td>
+                <td>0</td>
+                <td>0</td>
+                <td>18</td>
+            </tr>
+        
+            <tr>
+                <td>employment</td>
+                <td class="good">93.33%</td>
+                <td>26</td>
+                <td>2</td>
+                <td>2</td>
+                <td>30</td>
+            </tr>
+        
+            <tr>
+                <td>health_details</td>
+                <td class="good">91.67%</td>
+                <td>11</td>
+                <td>0</td>
+                <td>1</td>
+                <td>12</td>
+            </tr>
+        
+            <tr>
+                <td>personal_details</td>
+                <td class="warning">89.22%</td>
+                <td>91</td>
+                <td>0</td>
+                <td>11</td>
+                <td>102</td>
+            </tr>
+        
+            <tr>
+                <td>loans_mortgages</td>
+                <td class="warning">83.33%</td>
+                <td>20</td>
+                <td>0</td>
+                <td>4</td>
+                <td>24</td>
+            </tr>
+        
+            <tr>
+                <td>expenses</td>
+                <td class="bad">58.33%</td>
+                <td>7</td>
+                <td>0</td>
+                <td>5</td>
+                <td>12</td>
+            </tr>
+        
+            <tr>
+                <td>protection_policies</td>
+                <td class="bad">58.33%</td>
+                <td>14</td>
+                <td>0</td>
+                <td>10</td>
+                <td>24</td>
+            </tr>
+        
+            <tr>
+                <td>incomes</td>
+                <td class="bad">41.67%</td>
+                <td>10</td>
+                <td>0</td>
+                <td>14</td>
+                <td>24</td>
+            </tr>
+        </table>
+
+        
+            <h2>Common Issues (Top Fields with Mismatches, Partials, Missing)</h2>
+            <div class="chart"><img src="common_issues.png" alt="Common Issues Chart" style="max-width: 100%;"></div>
+            <table>
+                <tr><th>Field</th><th>Total Issues</th><th>Issue Types (Count)</th><th>Examples (Max 3)</th></tr>
+        
+                <tr>
+                    <td><code>incomes.name</code></td>
+                    <td>5</td>
+                    <td>mismatch: 4<br>missing_ex: 1</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_001 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>primary employment and freelance</code><br>
+                         EX: <code class='value'>Software Engineer Salary</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_002 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>Emily</code><br>
+                         EX: <code class='value'>Salary</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_004 (missing_ex, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>household</code><br>
+                         EX: <code class='value'>None</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>incomes.owner</code></td>
+                    <td>5</td>
+                    <td>mismatch: 4<br>missing_ex: 1</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_001 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>individual</code><br>
+                         EX: <code class='value'>Emily</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_003 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>Client</code><br>
+                         EX: <code class='value'>Sophie</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_004 (missing_ex, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>joint</code><br>
+                         EX: <code class='value'>None</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>protection_policies.provider</code></td>
+                    <td>5</td>
+                    <td>missing_ex: 1<br>mismatch: 4</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_001 (missing_ex, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>Prudential</code><br>
+                         EX: <code class='value'>None</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_002 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>SecureLife</code><br>
+                         EX: <code class='value'>SecureLife</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_004 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>ABC Insurance</code><br>
+                         EX: <code class='value'>ABC Insurance</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>protection_policies.type</code></td>
+                    <td>5</td>
+                    <td>mismatch: 5</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_001 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>term</code><br>
+                         EX: <code class='value'>term life</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_002 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>term</code><br>
+                         EX: <code class='value'>Term Life Insurance</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_004 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>term</code><br>
+                         EX: <code class='value'>term life</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>personal_details.current_address.ownership_status</code></td>
+                    <td>4</td>
+                    <td>mismatch: 4</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_001 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>yes</code><br>
+                         EX: <code class='value'>own</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_004 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>yes</code><br>
+                         EX: <code class='value'>own</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_005 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>yes</code><br>
+                         EX: <code class='value'>own</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>expenses.loan_repayments.amount</code></td>
+                    <td>4</td>
+                    <td>mismatch: 4</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_002 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>25000</code><br>
+                         EX: <code class='value'>500</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_003 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>250</code><br>
+                         EX: <code class='value'>200</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_004 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>25000</code><br>
+                         EX: <code class='value'>300</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>loans_mortgages.type</code></td>
+                    <td>4</td>
+                    <td>mismatch: 4</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_002 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>fixed</code><br>
+                         EX: <code class='value'>Car Loan</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_004 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>unsubsidized</code><br>
+                         EX: <code class='value'>unsubsidized</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_005 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>fixed</code><br>
+                         EX: <code class='value'>mortgage</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>incomes.frequency</code></td>
+                    <td>3</td>
+                    <td>mismatch: 3</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_002 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>bi-weekly</code><br>
+                         EX: <code class='value'>annually</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_003 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>monthly</code><br>
+                         EX: <code class='value'>annual</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_004 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>monthly</code><br>
+                         EX: <code class='value'>yearly</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>personal_details.client.title</code></td>
+                    <td>3</td>
+                    <td>missing_ex: 3</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_002 (missing_ex, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>project manager</code><br>
+                         EX: <code class='value'>None</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_003 (missing_ex, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>Project Manager</code><br>
+                         EX: <code class='value'>None</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_004 (missing_ex, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>project manager</code><br>
+                         EX: <code class='value'>None</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>employment.client.employer</code></td>
+                    <td>2</td>
+                    <td>partial_match: 2</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_001 (partial_match, Sim: 0.50)</strong><br>
+                         GT: <code class='value'>Creative Solutions Ltd.</code><br>
+                         EX: <code class='value'>Creative Solutions Ltd</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_004 (partial_match, Sim: 0.50)</strong><br>
+                         GT: <code class='value'>Tech Innovations Ltd.</code><br>
+                         EX: <code class='value'>Tech Innovations Ltd</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>personal_details.client.gender</code></td>
+                    <td>2</td>
+                    <td>missing_ex: 2</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_004 (missing_ex, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>male</code><br>
+                         EX: <code class='value'>None</code>
+                     </div>
+                 
+                     <div class='example'>
+                         <strong>case_005 (missing_ex, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>male</code><br>
+                         EX: <code class='value'>None</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>incomes.amount</code></td>
+                    <td>1</td>
+                    <td>mismatch: 1</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_001 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>85000</code><br>
+                         EX: <code class='value'>75000</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>employment.client.country_domiciled</code></td>
+                    <td>1</td>
+                    <td>mismatch: 1</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_002 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>UK</code><br>
+                         EX: <code class='value'>England</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>health_details.client.current_state_of_health</code></td>
+                    <td>1</td>
+                    <td>mismatch: 1</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_002 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>good</code><br>
+                         EX: <code class='value'>fair</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>personal_details.client.mobile_phone</code></td>
+                    <td>1</td>
+                    <td>mismatch: 1</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_004 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>5551234567</code><br>
+                         EX: <code class='value'>(555) 123-4567</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>personal_details.current_address.town_city</code></td>
+                    <td>1</td>
+                    <td>missing_ex: 1</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_004 (missing_ex, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>Springfield</code><br>
+                         EX: <code class='value'>None</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>expenses.housing_expenses.amount</code></td>
+                    <td>1</td>
+                    <td>mismatch: 1</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_005 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>1800</code><br>
+                         EX: <code class='value'>1200</code>
+                     </div>
+                 </td>
+                </tr>
+            
+                <tr>
+                    <td><code>employment.client.employment_status</code></td>
+                    <td>1</td>
+                    <td>mismatch: 1</td>
+                    <td>
+                     <div class='example'>
+                         <strong>case_006 (mismatch, Sim: 0.00)</strong><br>
+                         GT: <code class='value'>employed</code><br>
+                         EX: <code class='value'>part-time</code>
+                     </div>
+                 </td>
+                </tr>
+            </table>
+
+        <!-- Placeholder for future detailed results per case -->
+        <!-- <h2>Detailed Field Comparison (Example Case)</h2> -->
+        <!-- Add logic here to include detailed tables for each case if needed -->
+
+    </body>
+    </html>
+    

@@ -1,0 +1,642 @@
+{
+  "timestamp": "2025-05-01 15:47:54",
+  "total_cases_processed": 6,
+  "total_cases_valid": 6,
+  "overall_metrics": {
+    "accuracy": 0.8089,
+    "matches": 197,
+    "partial_matches": 2,
+    "mismatches": 47,
+    "missing_fields": 9,
+    "total_fields_compared": 246
+  },
+  "case_metrics": [
+    {
+      "case_name": "case_001",
+      "case_number": 1,
+      "accuracy": 0.8536585365853658,
+      "matches": 34,
+      "partial_matches": 1,
+      "mismatches": 6,
+      "missing": 1,
+      "total": 41
+    },
+    {
+      "case_name": "case_002",
+      "case_number": 2,
+      "accuracy": 0.7804878048780488,
+      "matches": 32,
+      "partial_matches": 0,
+      "mismatches": 9,
+      "missing": 1,
+      "total": 41
+    },
+    {
+      "case_name": "case_003",
+      "case_number": 3,
+      "accuracy": 0.9024390243902439,
+      "matches": 37,
+      "partial_matches": 0,
+      "mismatches": 4,
+      "missing": 1,
+      "total": 41
+    },
+    {
+      "case_name": "case_004",
+      "case_number": 4,
+      "accuracy": 0.7073170731707317,
+      "matches": 28,
+      "partial_matches": 1,
+      "mismatches": 12,
+      "missing": 5,
+      "total": 41
+    },
+    {
+      "case_name": "case_005",
+      "case_number": 5,
+      "accuracy": 0.8048780487804879,
+      "matches": 33,
+      "partial_matches": 0,
+      "mismatches": 8,
+      "missing": 1,
+      "total": 41
+    },
+    {
+      "case_name": "case_006",
+      "case_number": 6,
+      "accuracy": 0.8048780487804879,
+      "matches": 33,
+      "partial_matches": 0,
+      "mismatches": 8,
+      "missing": 0,
+      "total": 41
+    }
+  ],
+  "category_metrics": {
+    "employment": {
+      "accuracy": 0.9333,
+      "matches": 26,
+      "partial_matches": 2,
+      "mismatches": 2,
+      "total": 30
+    },
+    "expenses": {
+      "accuracy": 0.5833,
+      "matches": 7,
+      "partial_matches": 0,
+      "mismatches": 5,
+      "total": 12
+    },
+    "health_details": {
+      "accuracy": 0.9167,
+      "matches": 11,
+      "partial_matches": 0,
+      "mismatches": 1,
+      "total": 12
+    },
+    "incomes": {
+      "accuracy": 0.4167,
+      "matches": 10,
+      "partial_matches": 0,
+      "mismatches": 14,
+      "total": 24
+    },
+    "loans_mortgages": {
+      "accuracy": 0.8333,
+      "matches": 20,
+      "partial_matches": 0,
+      "mismatches": 4,
+      "total": 24
+    },
+    "pensions": {
+      "accuracy": 1.0,
+      "matches": 18,
+      "partial_matches": 0,
+      "mismatches": 0,
+      "total": 18
+    },
+    "personal_details": {
+      "accuracy": 0.8922,
+      "matches": 91,
+      "partial_matches": 0,
+      "mismatches": 11,
+      "total": 102
+    },
+    "protection_policies": {
+      "accuracy": 0.5833,
+      "matches": 14,
+      "partial_matches": 0,
+      "mismatches": 10,
+      "total": 24
+    }
+  },
+  "common_issues": [
+    {
+      "field": "incomes.name",
+      "count": 5,
+      "examples": [
+        {
+          "case": "case_001",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "primary employment and freelance",
+          "extracted": "Software Engineer Salary",
+          "processed_gt": "primary employment and freelance",
+          "processed_ex": "software engineer salary"
+        },
+        {
+          "case": "case_002",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "Emily",
+          "extracted": "Salary",
+          "processed_gt": "emily",
+          "processed_ex": "salary"
+        },
+        {
+          "case": "case_004",
+          "status": "missing_ex",
+          "similarity": 0.0,
+          "ground_truth": "household",
+          "extracted": null,
+          "processed_gt": "household",
+          "processed_ex": ""
+        }
+      ],
+      "statuses": {
+        "mismatch": 4,
+        "missing_ex": 1
+      }
+    },
+    {
+      "field": "incomes.owner",
+      "count": 5,
+      "examples": [
+        {
+          "case": "case_001",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "individual",
+          "extracted": "Emily",
+          "processed_gt": "person",
+          "processed_ex": "emily"
+        },
+        {
+          "case": "case_003",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "Client",
+          "extracted": "Sophie",
+          "processed_gt": "person",
+          "processed_ex": "sophie"
+        },
+        {
+          "case": "case_004",
+          "status": "missing_ex",
+          "similarity": 0.0,
+          "ground_truth": "joint",
+          "extracted": null,
+          "processed_gt": "joint",
+          "processed_ex": ""
+        }
+      ],
+      "statuses": {
+        "mismatch": 4,
+        "missing_ex": 1
+      }
+    },
+    {
+      "field": "protection_policies.provider",
+      "count": 5,
+      "examples": [
+        {
+          "case": "case_001",
+          "status": "missing_ex",
+          "similarity": 0.0,
+          "ground_truth": "Prudential",
+          "extracted": null,
+          "processed_gt": "prudential",
+          "processed_ex": ""
+        },
+        {
+          "case": "case_002",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "SecureLife",
+          "extracted": "SecureLife",
+          "processed_gt": "securelife",
+          "processed_ex": "securelife"
+        },
+        {
+          "case": "case_004",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "ABC Insurance",
+          "extracted": "ABC Insurance",
+          "processed_gt": "abc insurance",
+          "processed_ex": "abc insurance"
+        }
+      ],
+      "statuses": {
+        "missing_ex": 1,
+        "mismatch": 4
+      }
+    },
+    {
+      "field": "protection_policies.type",
+      "count": 5,
+      "examples": [
+        {
+          "case": "case_001",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "term",
+          "extracted": "term life",
+          "processed_gt": "term",
+          "processed_ex": "term life"
+        },
+        {
+          "case": "case_002",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "term",
+          "extracted": "Term Life Insurance",
+          "processed_gt": "term",
+          "processed_ex": "term life insurance"
+        },
+        {
+          "case": "case_004",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "term",
+          "extracted": "term life",
+          "processed_gt": "term",
+          "processed_ex": "term life"
+        }
+      ],
+      "statuses": {
+        "mismatch": 5
+      }
+    },
+    {
+      "field": "personal_details.current_address.ownership_status",
+      "count": 4,
+      "examples": [
+        {
+          "case": "case_001",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "yes",
+          "extracted": "own",
+          "processed_gt": "yes",
+          "processed_ex": "own"
+        },
+        {
+          "case": "case_004",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "yes",
+          "extracted": "own",
+          "processed_gt": "yes",
+          "processed_ex": "own"
+        },
+        {
+          "case": "case_005",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "yes",
+          "extracted": "own",
+          "processed_gt": "yes",
+          "processed_ex": "own"
+        }
+      ],
+      "statuses": {
+        "mismatch": 4
+      }
+    },
+    {
+      "field": "expenses.loan_repayments.amount",
+      "count": 4,
+      "examples": [
+        {
+          "case": "case_002",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": 25000,
+          "extracted": 500,
+          "processed_gt": 25000.0,
+          "processed_ex": 500.0
+        },
+        {
+          "case": "case_003",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": 250,
+          "extracted": 200,
+          "processed_gt": 250.0,
+          "processed_ex": 200.0
+        },
+        {
+          "case": "case_004",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "25000",
+          "extracted": 300,
+          "processed_gt": 25000.0,
+          "processed_ex": 300.0
+        }
+      ],
+      "statuses": {
+        "mismatch": 4
+      }
+    },
+    {
+      "field": "loans_mortgages.type",
+      "count": 4,
+      "examples": [
+        {
+          "case": "case_002",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "fixed",
+          "extracted": "Car Loan",
+          "processed_gt": "fixed",
+          "processed_ex": "car loan"
+        },
+        {
+          "case": "case_004",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "unsubsidized",
+          "extracted": "unsubsidized",
+          "processed_gt": "unsubsidized",
+          "processed_ex": "unsubsidized"
+        },
+        {
+          "case": "case_005",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "fixed",
+          "extracted": "mortgage",
+          "processed_gt": "fixed",
+          "processed_ex": "mortgage"
+        }
+      ],
+      "statuses": {
+        "mismatch": 4
+      }
+    },
+    {
+      "field": "incomes.frequency",
+      "count": 3,
+      "examples": [
+        {
+          "case": "case_002",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "bi-weekly",
+          "extracted": "annually",
+          "processed_gt": "bi-weekly",
+          "processed_ex": "annually"
+        },
+        {
+          "case": "case_003",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "monthly",
+          "extracted": "annual",
+          "processed_gt": "monthly",
+          "processed_ex": "annual"
+        },
+        {
+          "case": "case_004",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "monthly",
+          "extracted": "yearly",
+          "processed_gt": "monthly",
+          "processed_ex": "yearly"
+        }
+      ],
+      "statuses": {
+        "mismatch": 3
+      }
+    },
+    {
+      "field": "personal_details.client.title",
+      "count": 3,
+      "examples": [
+        {
+          "case": "case_002",
+          "status": "missing_ex",
+          "similarity": 0.0,
+          "ground_truth": "project manager",
+          "extracted": null,
+          "processed_gt": "project manager",
+          "processed_ex": ""
+        },
+        {
+          "case": "case_003",
+          "status": "missing_ex",
+          "similarity": 0.0,
+          "ground_truth": "Project Manager",
+          "extracted": null,
+          "processed_gt": "project manager",
+          "processed_ex": ""
+        },
+        {
+          "case": "case_004",
+          "status": "missing_ex",
+          "similarity": 0.0,
+          "ground_truth": "project manager",
+          "extracted": null,
+          "processed_gt": "project manager",
+          "processed_ex": ""
+        }
+      ],
+      "statuses": {
+        "missing_ex": 3
+      }
+    },
+    {
+      "field": "employment.client.employer",
+      "count": 2,
+      "examples": [
+        {
+          "case": "case_001",
+          "status": "partial_match",
+          "similarity": 0.5,
+          "ground_truth": "Creative Solutions Ltd.",
+          "extracted": "Creative Solutions Ltd",
+          "processed_gt": "creative solutions ltd.",
+          "processed_ex": "creative solutions ltd"
+        },
+        {
+          "case": "case_004",
+          "status": "partial_match",
+          "similarity": 0.5,
+          "ground_truth": "Tech Innovations Ltd.",
+          "extracted": "Tech Innovations Ltd",
+          "processed_gt": "tech innovations ltd.",
+          "processed_ex": "tech innovations ltd"
+        }
+      ],
+      "statuses": {
+        "partial_match": 2
+      }
+    },
+    {
+      "field": "personal_details.client.gender",
+      "count": 2,
+      "examples": [
+        {
+          "case": "case_004",
+          "status": "missing_ex",
+          "similarity": 0.0,
+          "ground_truth": "male",
+          "extracted": null,
+          "processed_gt": "male",
+          "processed_ex": ""
+        },
+        {
+          "case": "case_005",
+          "status": "missing_ex",
+          "similarity": 0.0,
+          "ground_truth": "male",
+          "extracted": null,
+          "processed_gt": "male",
+          "processed_ex": ""
+        }
+      ],
+      "statuses": {
+        "missing_ex": 2
+      }
+    },
+    {
+      "field": "incomes.amount",
+      "count": 1,
+      "examples": [
+        {
+          "case": "case_001",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "85000",
+          "extracted": 75000,
+          "processed_gt": 85000.0,
+          "processed_ex": 75000.0
+        }
+      ],
+      "statuses": {
+        "mismatch": 1
+      }
+    },
+    {
+      "field": "employment.client.country_domiciled",
+      "count": 1,
+      "examples": [
+        {
+          "case": "case_002",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "UK",
+          "extracted": "England",
+          "processed_gt": "uk",
+          "processed_ex": "england"
+        }
+      ],
+      "statuses": {
+        "mismatch": 1
+      }
+    },
+    {
+      "field": "health_details.client.current_state_of_health",
+      "count": 1,
+      "examples": [
+        {
+          "case": "case_002",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "good",
+          "extracted": "fair",
+          "processed_gt": "good",
+          "processed_ex": "fair"
+        }
+      ],
+      "statuses": {
+        "mismatch": 1
+      }
+    },
+    {
+      "field": "personal_details.client.mobile_phone",
+      "count": 1,
+      "examples": [
+        {
+          "case": "case_004",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "5551234567",
+          "extracted": "(555) 123-4567",
+          "processed_gt": "5551234567",
+          "processed_ex": "(555) 123-4567"
+        }
+      ],
+      "statuses": {
+        "mismatch": 1
+      }
+    },
+    {
+      "field": "personal_details.current_address.town_city",
+      "count": 1,
+      "examples": [
+        {
+          "case": "case_004",
+          "status": "missing_ex",
+          "similarity": 0.0,
+          "ground_truth": "Springfield",
+          "extracted": null,
+          "processed_gt": "springfield",
+          "processed_ex": ""
+        }
+      ],
+      "statuses": {
+        "missing_ex": 1
+      }
+    },
+    {
+      "field": "expenses.housing_expenses.amount",
+      "count": 1,
+      "examples": [
+        {
+          "case": "case_005",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": 1800,
+          "extracted": 1200,
+          "processed_gt": 1800.0,
+          "processed_ex": 1200.0
+        }
+      ],
+      "statuses": {
+        "mismatch": 1
+      }
+    },
+    {
+      "field": "employment.client.employment_status",
+      "count": 1,
+      "examples": [
+        {
+          "case": "case_006",
+          "status": "mismatch",
+          "similarity": 0.0,
+          "ground_truth": "employed",
+          "extracted": "part-time",
+          "processed_gt": "employed",
+          "processed_ex": "part-time"
+        }
+      ],
+      "statuses": {
+        "mismatch": 1
+      }
+    }
+  ]
+}

@@ -1,4 +1,15 @@
 # DESCRIPTION
+# Financial Adviser Conversation Analysis Pipeline
+
+This toy project implements an end-to-end pipeline for generating, extracting, and analyzing financial adviser-client conversations. It creates synthetic conversation data with matching ground truth, extracts structured information using LLMs, and provides comprehensive analysis of extraction accuracy.
+
+The pipeline consists of three main components:
+1. **Synthetic Data Generation**: Creates realistic financial adviser-client conversations with corresponding structured JSON data
+2. **Information Extraction**: Processes conversation transcripts to extract structured data using LLMs
+3. **Analysis and Evaluation**: Compares extracted data against ground truth, generating detailed metrics and visualizations
+
+NOTE: This project is far from being production ready. It serves as a proof of concept and experimental pipeline. A comprehensive set of future possible improvements can be found in the "POSSIBLE IMPROVEMENTS" section below.
+
 ## SYNTETIC DATA GENERATION
 
 Our pipeline creates realistic financial adviser-client conversations with matching structured data. We generate both natural-sounding dialogues and structured JSON together in one process.
@@ -153,15 +164,49 @@ Visualizations summarizing these results are available below and in the `compari
 
 For a more granular view, including per-case metrics, detailed category breakdowns, and specific examples of extraction errors, please refer to the comprehensive HTML report: `comparison_results/detailed_report.html`.
 
-# POSSIBLE IMPROVEMENTS:
-* Use more advanced models for generating the conversation. I used gpt4o-mini (to keep things cheap), more expressive models would perform better;
-* Use dynamic few shot examples to enforce style;
-* Iterate more on the prompt instructions to generate more expressive conversations;
-*  Randomize in what order we generate the sections and randomly decide what sections to actually populate. For instance, we must always generate the personal details discovery section, but we can add a switch to decide if to populate other instances and with how many entries. For instance, a client could respond that he has no incomes, or that he has several. The goal is to have a well distributed and omogeneus set of transcripts to provide a comprehensive syntetic evaluation set.
-* Enforce data normalization by prompt design. For instance, add more instructions in the syntetic data generation prompt on how to populate the partial JSON, so we reduce the burdain on the normalization pipeline during our analysis.
-* Generation is currently slow, use asyncio to parallelize syntetic data generation;
-* Instead of doind data extraction as zero-shot, do it progressively and iteratevly to better capture information.
-* Have a model in the loop to determine similarity for more complex answers where semantic similarity is not enough, like instance the "Notes" section.
+# POSSIBLE IMPROVEMENTS
+
+## Data Generation Enhancement
+
+- Use more advanced models for generating the conversation. I used gpt4o-mini (to keep things cheap), more expressive models would perform better
+- Use dynamic few shot examples to enforce style
+- Iterate more on the prompt instructions to generate more expressive conversations
+- Randomize the order of section generation and selectively populate sections based on scenario. For instance, we must always generate the personal details discovery section, but can dynamically decide whether to populate income sections based on client circumstances
+- Enforce data normalization through better prompt design, adding specific instructions on JSON population to reduce normalization burden during analysis
+- Implement generation parallelization using asyncio to accelerate synthetic data creation
+
+## Data Quality and Verification
+
+- Implement verification mechanisms to ensure transcript and ground truth JSON data consistency, potentially using an LLM as judge
+- Require citations for each utterance in generated paragraphs to establish clear links between transcript content and extracted data
+- Introduce controlled randomness in client responses to create more realistic and diverse conversational patterns
+- Develop comprehensive validation steps to catch edge cases and inconsistencies before they propagate through the pipeline
+
+## Extraction Pipeline Improvements
+
+- Replace single-prompt extraction with a multi-step approach using targeted extraction for different information types
+- Implement citation requirements to justify each extracted data point
+- Utilize separate LLM verification steps to validate extraction quality
+- Adopt specific pydantic models to enforce strict formatting and typing
+- Develop progressive, iterative extraction approaches rather than zero-shot extraction to better capture complex information
+- Incorporate LLM-based format adjustment tools to normalize inconsistent outputs
+
+## Evaluation Framework Enhancement
+
+- Expand evaluation approaches for different field types beyond basic accuracy metrics
+- Include LLM as judge for qualitative assessment of complex field extractions
+- Conduct detailed error analysis categorizing errors by type (false positives, false negatives, etc.)
+- Implement more diverse metrics beyond accuracy to provide multidimensional quality assessment
+- Analyze pipeline failure modes systematically, acknowledging that real-world conversations may not cover all data points
+- Use model-in-the-loop similarity determination for complex answers where semantic similarity measures are insufficient
+
+## Error Analysis and Debugging
+
+- Perform systematic investigation of mismatches between extracted and ground truth data
+- Implement targeted fixes to extraction logic based on error patterns
+- Verify that fixes resolve specific mismatches without introducing new errors
+- Document the root causes of extraction failures to inform future improvements
+- Establish regression testing to ensure stability of extraction performance over time
 
 
 # HOW TO USE

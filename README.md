@@ -13,7 +13,7 @@ NOTE: This project is far from being production ready. It serves as a proof of c
 ## SYNTETIC DATA GENERATION
 
 Our pipeline creates realistic financial adviser-client conversations with matching structured data. We generate both natural-sounding dialogues and structured JSON together in one process.
-We start by building a JSON schema based on the General Fact Find Template (GFFT) from the email assignment. Then we create the transcript by working through different sections of the schema one at a time. We chose this step-by-step approach to make sure the conversation covers all the needed fields, which would be tough if we tried to generate the whole transcript at once.
+We start by building a JSON schema based on the General Fact Find Template (GFFT) from pdf. Then we create the transcript by working through different sections of the schema one at a time. We chose this step-by-step approach to make sure the conversation covers all the needed fields, which would be tough if we tried to generate the whole transcript at once.
 For each conversation chunk, we also create JSON where the relevant GFFT sections are filled with data that comes up naturally in the dialogue. The JSON builds up gradually across the conversation.
 At the end, we combine all the dialogue chunks and partial JSONs to create a complete package: a realistic transcript paired with JSON containing all the data mentioned in the conversation.
 
